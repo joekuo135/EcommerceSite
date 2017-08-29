@@ -17,85 +17,92 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Men's Foorwear</title>
-    <body>    
-            <!-- SHOPPING CART SECTION -->
-            <div class="container-fluid">
-                <ul class="nav justify-content-end navbar-toggleable-sm flex-sm-row">
-                  <li><a class="nav-item nav-link active" href="#">MY ACCOUNT</a></li>
-                  <li><a class="nav-item nav-link" href="#">STORE LOCATOR</a></li>
-                  <li><a class="nav-item nav-link" href="#">SHOPPING BAG</a></li>
-                </ul> 
-            </div> <!-- end container fluid-->
-            
-              
-            <!-- SEARCH SECTION -->
-            <div class="container-fluid">
-              <div class="collapse navbar-collapse">
-                  <form class="form-inline justify-content-end">
-                      <input class="form-control mr-1" placeholder="Search">
-                      <button class="btn btn-reverse">GO</button>
-                  </form>
-                <!-- <form class="nav justify-content-end">
-                  <input type="text" value="SEARCH">
-                  <input type="submit" value="GO">
-                </form> -->
-              </div>
-            </div>
-            
-            <!-- COMPANY LOGO --> 
-            <div class="container-fluid">      
-              <div class="justify-content-center text-center">
-                <h3>SHOPSTYLE</h3>
-                <!-- <img id="logo" class="icon-bar" src=""> -->
-              </div>
-            </div> <!-- close container --> 
-                    
-            <!-- NAVIGATION -->
-                <div class="container-fluid">
-                    <ul class="nav justify-content-center navbar-toggleable-sm flex-sm-row">
-                      <li><a class="nav-item nav-link active" href="#">NEW ARRIVALS</a></li>
-                      <li class="dropdown">
-                        <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">MENS</a>
-                        <ul class="dropdown-menu" id="accessMenu" aria-haspopup="true" aria-expanded="false">
-                          <li><a href="#">Apparel</a></li>
-                          <li><a href="#">Footwear</a></li>
-                        </ul>
-                      </li>
-                      <li><a class="nav-item nav-link" href="#">WOMENS</a></li>
-                      <li><a class="nav-item nav-link" href="#">KIDS</a></li>
-                     
-                      <li class="dropdown">
-                          <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">ACCESSORIES</a>
-                          <ul class="dropdown-menu" id="accessMenu" aria-haspopup="true" aria-expanded="false">
-                            <li><a href="#">For Men <i class="icon-arrow-right"></i></a>
-                                <ul class="dropdown-menu sub-menu">
-                                    <li><a href="#">Jewelry</a></li>
-                                    <li><a href="#">Leather goods</a></li>
-                                    <li><a href="#">Watch</a></li>
-                                    <li class="divider"></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">For Women</a></li>
-                            <li><a href="#">For Kids</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Dojo's Exclusive<i class="icon-arrow-right"></i></a>
-                              <ul class="dropdown-menu sub-menu" id="exclusiveSubmenu">
-                                  <li><a href="#">Belts</a></li>
-                                  <li><a href="#">Books</a></li>
-                                  <li><a href="#">Stickers</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      <li><a class="nav-item nav-link" href="#">SALE</a></li>
-                    </ul> 
-                </div> <!-- end container fluid-->
+<body>    
+  <!-- SHOPPING CART SECTION -->
+  <div class="container-fluid">
+        <ul class="nav justify-content-end navbar-toggleable-sm flex-sm-row">
+          <li><a class="nav-item nav-link active" href="#">MY ACCOUNT</a></li>
+          <li><a class="nav-item nav-link" href="#">STORE LOCATOR</a></li>
+          <li><a class="nav-item nav-link" href="#">SHOPPING BAG</a></li>
+        </ul> 
+    </div> <!-- end container fluid-->
+
+    <!-- SEARCH SECTION -->
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+          <form class="form-inline justify-content-end">
+            <input class="form-control mr-1" placeholder="Search">
+            <button class="btn btn-reverse">GO</button>
+          </form>
+        <!-- <form class="nav justify-content-end">
+          <input type="text" value="SEARCH">
+          <input type="submit" value="GO">
+        </form> -->
+      </div>
+    </div>
+    
+    <!-- COMPANY LOGO --> 
+    <div class="container-fluid">      
+      <div class="justify-content-center text-center">
+        <h3>SHOPSTYLE</h3>
+        <!-- <img id="logo" class="icon-bar" src=""> -->
+      </div>
+    </div> <!-- close container --> 
+    
+    <!-- NAVIGATION -->
+    <div class="container-fluid">
+      <ul class="nav justify-content-center navbar-toggleable-sm flex-sm-row">
+        <li><a class="nav-item nav-link active" href="#">NEW ARRIVALS</a></li>
+        <li class="dropdown">
+        <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">WOMENS</a>
+          <ul class="dropdown-menu" id="accessMenu" aria-haspopup="true" aria-expanded="false">
+            <li><a href="/products/show_dashboard/Womens">Apparel</a></li>
+            <li><a href="">Footwear</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">MENS</a>
+          <ul class="dropdown-menu" id="accessMenu" aria-haspopup="true" aria-expanded="false">
+            <li><a href="#">Apparel</a></li>
+            <li><a href="/products/show_dashboard/Mens">Footwear</a></li>
+          </ul>
+        </li>
+    
+        <li><a class="nav-item nav-link" href="#">KIDS</a></li>
+    
+        <li class="dropdown">
+          <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">ACCESSORIES</a>
+          <ul class="dropdown-menu" id="accessMenu" aria-haspopup="true" aria-expanded="false">
+            <li><a href="#">For Men <i class="icon-arrow-right"></i></a>
+              <ul class="dropdown-menu sub-menu">
+                <li><a href="#">Jewelry</a></li>
+                <li><a href="#">Leather goods</a></li>
+                <li><a href="#">Watch</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>
+            <li><a href="#">For Women</a></li>
+            <li><a href="#">For Kids</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Dojo's Exclusive<i class="icon-arrow-right"></i></a>
+              <ul class="dropdown-menu sub-menu" id="exclusiveSubmenu">
+                <li><a href="#">Belts</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Stickers</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a class="nav-item nav-link" href="#">SALE</a></li>
+      </ul> 
+    </div> <!-- end container fluid-->
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
-                
-  
-    <div class="container-fluid" id="categorybox">
-        <div class="row-fluid">
+<div class="row vdivide"></div>   
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <section class="align-top col-sm-3" id="categorybox">
             <h3 style='margin-top: 50px; padding: 0px 0px 5px 0px;'>Categories</h3>
                 <ul>
                     {%for category in categories%}
@@ -103,22 +110,20 @@
                     {%endfor%}
                     <li style="margin-top: 20px; margin-bottom: 50px;"><a class='showall' href="/products/all/1">Show all</a></li>
                 </ul>
-            </div> <!-- end row-fluid -->
-    </div> <!-- end container-fluid -->
-
-    <div id="show_product">
-      {% for product in products%}
-<h1>{{product.name}}</h1>
-<p>{{product.description}}</p>
-<img src={{product.image1}}>
-<img src={{product.image2}}>
-<img src={{product.image3}}>
-<img src={{product.image4}}>
-{% endfor %}
-
-      
+        </section>
+        <section class="col-sm-9" id="show_product">
+            {% for product in products%}
+            <h1>{{product.name}}</h1>
+            <p>{{product.description}}</p>
+            <img class="item" src={{product.image1}}>
+            <img class="item" src={{product.image2}}>
+            <img class="item" src={{product.image3}}>
+            <img class="item" src={{product.image4}}>
+            <p>{{product.price}}</p>
+            {% endfor %}
+        </section>
     </div>
-
+</div> <!-- end container-fluid -->
 
 
 
