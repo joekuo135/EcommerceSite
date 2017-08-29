@@ -38,7 +38,7 @@ def create_item(request):
 	product = Product.objects.create(name=name, category=category, description=description, image1=image1, image2=image2, image3=image3, image4=image4, size=size, price=price)
 
 	all_products = Product.objects.all()
-	print all_products
+	#print all_products
 
 	content = {
 		'products': all_products
@@ -46,13 +46,20 @@ def create_item(request):
 
 	return render(request, 'products_app/show.html', content)
 
-def show_dashboard(request):
+def show_product(request, product_id):
+	print "show product"
+	product = Product.objects.get(id=product_id)
+	print product
+	return render(request, 'products_app/product_profile.html', {'product': product})
 
+def show_dashboard(request):
+	print "show dashboard"
 	all_products = Product.objects.all()
-	print all_products
+	#print all_products
 
 	content = {
-		'products': all_products
+		'products': all_products,
+		'categories': ['Mens', 'Womens', 'Kids'],
 	}
 
-	return render(request, 'userDashboard/index.html', content)
+	return render(request, 'products_app/product_dash.html', content)
