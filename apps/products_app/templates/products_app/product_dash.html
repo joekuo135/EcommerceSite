@@ -18,7 +18,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Men's Foorwear</title>
 <body>
-	
+        <h1>product page</h1>
+        {% for product in products%}
+        <h1>{{product.name}}</h1>
+        <p>{{product.description}}</p>
+        <img src={{product.image1}}>
+        <img src={{product.image2}}>
+        <img src={{product.image3}}>
+        <img src={{product.image4}}>
+        {% endfor %}
 <h1>product name</h1>
 <p>product description</p>
 <img src="">
