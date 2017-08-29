@@ -2,11 +2,22 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript">
+		img{
+			width=200px;
+		}
+	</script>
 </head>
 <body>
-<h1>product name</h1>
-<p>product description</p>
-<img src="">
+<h1>product page</h1>
+{% for product in products%}
+<h1>{{product.name}}</h1>
+<p>{{product.description}}</p>
+<img src={{product.image1}}>
+<img src={{product.image2}}>
+<img src={{product.image3}}>
+<img src={{product.image4}}>
+{% endfor %}
 
 </body>
 </html>
