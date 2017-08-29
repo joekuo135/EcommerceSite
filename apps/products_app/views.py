@@ -55,4 +55,4 @@ def show_dashboard(request):
 		'products': all_products
 	}
 
-	return render(request, 'userDashboard/index.html', content)
+	return render(request, 'products_app/product_dash.html', content)
