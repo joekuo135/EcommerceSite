@@ -99,14 +99,25 @@
             <h3 style='margin-top: 50px; padding: 0px 0px 5px 0px;'>Categories</h3>
                 <ul>
                     {%for category in categories%}
-                    <li><a class='category' href="/products/{{category.id}}/1">{{category.name}} ({{category.amount}})</a></li>
+                    <li><a class='category' href="/products/show_dashboard/{{category}}">{{category}}</a></li>
                     {%endfor%}
                     <li style="margin-top: 20px; margin-bottom: 50px;"><a class='showall' href="/products/all/1">Show all</a></li>
                 </ul>
             </div> <!-- end row-fluid -->
     </div> <!-- end container-fluid -->
 
-    <div id="show_product"></div>
+    <div id="show_product">
+      {% for product in products%}
+<h1>{{product.name}}</h1>
+<p>{{product.description}}</p>
+<img src={{product.image1}}>
+<img src={{product.image2}}>
+<img src={{product.image3}}>
+<img src={{product.image4}}>
+{% endfor %}
+
+      
+    </div>
 
 
 

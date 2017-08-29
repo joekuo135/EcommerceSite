@@ -92,6 +92,8 @@ def populate_database(request):
 	# create_item(request, name, category,description, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	
+
+	
 	all_products = Product.objects.all()
 	#print all_products
 
