@@ -1,0 +1,6 @@
+*pyc
+db.sqlite3
+/venv
+/apps/user_app/migrations
+/apps/orders_app/migrations
+/apps/products_app/migrations
