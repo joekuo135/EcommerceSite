@@ -1,0 +1,18 @@
+<div id="allproducts">
+    <h2>{%if category%}{{category.name}}{%else%}All Products{%endif%}</h2>
+    <div id='prod_container'>
+        {%for product in products%}
+        <div class="item">
+            <a href="/products/product/{{product.id}}"><img style="max-width:200px;" src='{{product.image}}' alt='{{product.name}}'></a>
+            <p>${{product.price}}</p>
+            <p id="itemA"><a href="/products/product/{{product.id}}">{{product.name}}</a></p>
+        </div>
+        {%endfor%}
+
+    <ul class='pagination' style="display: flex;">
+        {%for i in numPages%}
+        <li id="pagPage" style="flex-wrap: wrap; max-width: 50px;" {%if i == request.session.lastpage%}class='active'{%endif%}><a href="/products/{%if category%}{{category.id}}{%else%}all{%endif%}/{{i}}">{{i}}</a></li>
+        {%endfor%}
+    </ul>
+    </div>
+</div>
