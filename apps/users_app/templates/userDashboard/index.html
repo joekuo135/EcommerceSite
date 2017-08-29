@@ -203,48 +203,18 @@
 
           <div class="container-fluid" id="services">
             <div class="row">
+            {% for product in featuredProducts %}
               <section class="col-sm-6 col-md-4 col-lg-2">
                 <div class="row">
-                  <img src="/static/userDashboard/images/box_pink_300.png">
+                  <img class="featuredPic" src={{product.image1}}>
                 </div>
-                <h3> title 1</h3>
-                <p>Lorem iosum content here areview,andsnks nsdsdnfskf erewnsf amsdndsf amkgffka asndkfdsd</p>
+                <h3> {{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <p>{{product.price}}</p>
               </section>
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                <div class="row">
-                  <img src="/static/userDashboard/images/box_b_300.png">
-                </div>
-                <h3> title 2</h3>
-                <p>Lorem iosum content here areview,andsnks nsdsdnfskf erewnsf amsdndsf amkgffka asndkfdsd</p>
-              </div>
-              <section class="col-sm-6 col-md-4 col-lg-2">
-                <div class="row">
-                  <img src="/static/userDashboard/images/box_g_300.png">
-                </div>
-                <h3> title 3</h3>
-                <p>Lorem iosum content here areview,andsnks nsdsdnfskf erewnsf amsdndsf amkgffka asndkfdsd</p>
-              </section>
-              <section class="col-sm-6 col-md-4 col-lg-2">
-                <div class="row">
-                  <img src="/static/userDashboard/images/box_purple_300.png">
-                </div>
-                <h3> title 4</h3>
-                <p>Lorem iosum content here areview,andsnks nsdsdnfskf erewnsf amsdndsf amkgffka asndkfdsd</p>
-              </section>
-              <section class="col-sm-6 col-md-4 col-lg-2">
-                <div class="row">
-                  <img src="/static/userDashboard/images/box_pink_300.png">
-                </div>
-                <h3> title 5</h3>
-                <p>Lorem iosum content here areview,andsnks nsdsdnfskf erewnsf amsdndsf amkgffka asndkfdsd</p>
-              </section>
-              <section class="col-sm-6 col-md-4 col-lg-2">
-                <div class="row">
-                  <img src="/static/userDashboard/images/box_g_300.png">
-                </div>
-                <h3> title 6</h3>
-                <p>Lorem iosum content here areview,andsnks nsdsdnfskf erewnsf amsdndsf amkgffka asndkfdsd</p>
-              </section>
+              {% endfor %} 
+         
+            </div>
             </div>
 
           </body>

@@ -9,7 +9,7 @@ import datetime
 from time import gmtime, strftime
 import re
 import bcrypt
-import math
+import math, random
 from models import Product
 
 
@@ -18,7 +18,25 @@ from models import Product
 # Create your views here.
 
 def index(request):
-	return render(request, 'userDashboard/index.html')
+	print "products_app index"
+	#get featured products
+	products = Product.objects.all()
+	featuredProducts = []
+	ids = []
+	for product in products:
+		ids.append(product.id)
+
+	#print temp
+	for i in range(0,6):
+		randomProduct_id = ids[random.randint(0, len(ids)-1)]
+		temp = Product.objects.get(id =randomProduct_id)
+		featuredProducts.append(temp)
+
+	print featuredProducts
+
+	context = { 'featuredProducts': featuredProducts, }
+
+	return render(request, 'userDashboard/index.html', context)
 
 def show(request):
 
@@ -93,7 +111,7 @@ def populate_database(request):
 	#---------------adding item--------------------------
 	
 
-	
+
 	all_products = Product.objects.all()
 	#print all_products
 
