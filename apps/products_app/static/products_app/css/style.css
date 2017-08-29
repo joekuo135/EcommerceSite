@@ -22,6 +22,17 @@ color: rgba(0,123,255,.75);
 text-align: center;
 padding: 10px 20px 10px 20px;
 flex-wrap: wrap;
+}
 
+#categorybox{
+  width: 300px;
+  border: 1px solid black;
+  display: inline-block;
+}
 
+#show_product{
+  width: 900px;
+  height: 600px;
+  display: inline-block;
+  border: 1px solid red;
 }
