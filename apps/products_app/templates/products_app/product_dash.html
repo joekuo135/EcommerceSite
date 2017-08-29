@@ -90,43 +90,41 @@
                       <li><a class="nav-item nav-link" href="#">SALE</a></li>
                     </ul> 
                 </div> <!-- end container fluid-->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                <div class="container-fluid">
-        
-        
-                    <div class="row-fluid">
-            <h3 style='margin-top: 50px; padding: 0px 0px 5px 0px;'>Categories</h3>
-            <ul>
-                {%for category in categories%}
-                <li><a class='category' href="/products/{{category.id}}/1">{{category.name}} ({{category.amount}})</a></li>
-                {%endfor%}
-                <li style="margin-top: 20px; margin-bottom: 50px;"><a class='showall' href="/products/all/1">Show all</a></li>
-            </ul>
-        </div>
+
+        <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
                 
+  
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <h3 style='margin-top: 50px; padding: 0px 0px 5px 0px;'>Categories</h3>
+                <ul>
+                    {%for category in categories%}
+                    <li><a class='category' href="/products/{{category.id}}/1">{{category.name}} ({{category.amount}})</a></li>
+                    {%endfor%}
+                    <li style="margin-top: 20px; margin-bottom: 50px;"><a class='showall' href="/products/all/1">Show all</a></li>
+                </ul>
+            </div> <!-- end row-fluid -->
+    </div> <!-- end container-fluid -->
+
+    <div id="show_product" class='col-md-10'></div>
+
 
     <div class="container-fluid">
         <div class="row-fluid">
-            <h1>product page</h1>
-            {% for product in products%}
-            <h1>{{product.name}}</h1>
-            <p>{{product.description}}</p>
-            <img src={{product.image1}}>
-            <img src={{product.image2}}>
-            <img src={{product.image3}}>
-            <img src={{product.image4}}>
-            {% endfor %}
-            <h1>product name</h1>
-            <p>product description</p>
-            <img src="">
+            <section class="col-md-1">
+                <h1>product page</h1>
+                {% for product in products%}
+                <h1>{{product.name}}</h1>
+                <p>{{product.description}}</p>
+                <img src={{product.image1}}>
+                <img src={{product.image2}}>
+                <img src={{product.image3}}>
+                <img src={{product.image4}}>
+                {% endfor %}
+                <h1>product name</h1>
+                <p>product description</p>
+                <img src="">
+            </section>
         </div> <!-- end row-fluid -->
     </div> <!-- end container-fluid -->
 
