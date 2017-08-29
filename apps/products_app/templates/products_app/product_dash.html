@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'userDashboard/css/style.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'userDashboard/css/bootstrap.min.css' %}"> -->
-    <link rel="stylesheet" href="{% static 'userDashboard/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'userDashboard/css/bootstrap-theme.css' %}">
-    <link rel="stylesheet" href="{% static 'userDashboard/css/bootstrap-reboot.min.css' %}">
-    <link rel="stylesheet" href="{% static 'userDashboard/css/bootstrap-grid.min.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'userDashboard/js/jquery-3.2.1.slim.min.js' %}"> -->
-    <!-- <link rel="stylesheet" href="{% static 'userDashboard/js/tether.min.js' %}"> -->
+    <link rel="stylesheet" href="{% static 'products_app/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'products_app/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap-grid.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'products_app/js/jquery-3.2.1.slim.min.js' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'products_app/js/tether.min.js' %}"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -94,7 +94,7 @@
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
                 
   
-    <div class="container-fluid">
+    <div class="container-fluid" id="categorybox">
         <div class="row-fluid">
             <h3 style='margin-top: 50px; padding: 0px 0px 5px 0px;'>Categories</h3>
                 <ul>
@@ -106,27 +106,9 @@
             </div> <!-- end row-fluid -->
     </div> <!-- end container-fluid -->
 
-    <div id="show_product" class='col-md-10'></div>
+    <div id="show_product"></div>
 
 
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <section class="col-md-1">
-                <h1>product page</h1>
-                {% for product in products%}
-                <h1>{{product.name}}</h1>
-                <p>{{product.description}}</p>
-                <img src={{product.image1}}>
-                <img src={{product.image2}}>
-                <img src={{product.image3}}>
-                <img src={{product.image4}}>
-                {% endfor %}
-                <h1>product name</h1>
-                <p>product description</p>
-                <img src="">
-            </section>
-        </div> <!-- end row-fluid -->
-    </div> <!-- end container-fluid -->
 
 
 </body>
