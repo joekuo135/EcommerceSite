@@ -30,9 +30,12 @@ def show_product(request, product_id):
 	print product
 	return render(request, 'products_app/product_profile.html', {'product': product})
 
-def show_dashboard(request):
+def show_dashboard(request, category="all"):
 	print "show dashboard"
-	all_products = Product.objects.all()
+	if category=="all":
+		all_products = Product.objects.all()
+	else:
+		all_products = Product.objects.filter(category=category)
 	#print all_products
 
 	content = {
@@ -56,8 +59,8 @@ def populate_database(request):
 	image2 = "/static/products_app/images/dress2.jpg"
 	image3 = "/static/products_app/images/dress3.jpg"
 	image4 = "/static/products_app/images/dress4.jpg"
-	size = "9"
-	price = "70"
+	size = "Medium"
+	price = 70
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
@@ -70,8 +73,23 @@ def populate_database(request):
 	image3 = "/static/products_app/images/boot3.png"
 	image4 = "/static/products_app/images/boot4.png"
 	size = "9"
-	price = "250"
+	price = 250
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+	#---------------adding item--------------------------
+	# name = ""
+	# category = ""
+	# description = ""
+	# image1 = "/static/products_app/images/"
+	# image2 = "/static/products_app/images/"
+	# image3 = "/static/products_app/images/"
+	# image4 = "/static/products_app/images/"
+	# size = ""
+	# price = 
+	# onSale =  #(optional) 1: on sale 0: not on sale
+	# onSale_price = #If on sale must set on sale price
+	# newArrival = #(optional) 1 for new, 0 for regular
+	#
+	# create_item(request, name, category,description, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	
 	all_products = Product.objects.all()
