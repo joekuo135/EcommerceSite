@@ -1,0 +1,27 @@
+.item{
+  display: inline-block;
+  margin-right: 30px;;
+  margin-bottom: 30px;
+  vertical-align: top;
+  min-height: 300px;
+
+}
+.item>p{
+font-size: large;
+color: rgba(0,123,0,.75);
+text-decoration: none;
+margin: 10px 0px 0px 0px;
+padding: 10px;
+text-align: center;
+flex-wrap: wrap;
+max-width: 200px;
+}
+
+.item a{
+color: rgba(0,123,255,.75);
+text-align: center;
+padding: 10px 20px 10px 20px;
+flex-wrap: wrap;
+
+
+}
