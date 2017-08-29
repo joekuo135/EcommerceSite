@@ -24,28 +24,6 @@ def show(request):
 
 	return render(request, 'products_app/show.html')
 
-def create_item(request):
-	name = "Timerland Hiking Boot"
-	category = "Mens"
-	description = "Men's Limited Release 1978 Waterproof Hiking Boots"
-	image1 = "/static/products_app/images/boot1.png"
-	image2 = "/static/products_app/images/boot2.png"
-	image3 = "/static/products_app/images/boot3.png"
-	image4 = "/static/products_app/images/boot4.png"
-	size = "9"
-	price = "250"
-
-	product = Product.objects.create(name=name, category=category, description=description, image1=image1, image2=image2, image3=image3, image4=image4, size=size, price=price)
-
-	all_products = Product.objects.all()
-	#print all_products
-
-	content = {
-		'products': all_products
-	}
-
-	return render(request, 'products_app/show.html', content)
-
 def show_product(request, product_id):
 	print "show product"
 	product = Product.objects.get(id=product_id)
@@ -63,3 +41,45 @@ def show_dashboard(request):
 	}
 
 	return render(request, 'products_app/product_dash.html', content)
+
+def create_item(request, name, category,description, image1, image2, image3, image4, size, price):
+
+	product = Product.objects.create(name=name, category=category, description=description, image1=image1, image2=image2, image3=image3, image4=image4, size=size, price=price)
+
+	return True
+
+def populate_database(request):
+	name = "A-line Dress"
+	category = "Womens"
+	description = "Dress with fun patterns!"
+	image1 = "/static/products_app/images/dress1.jpg"
+	image2 = "/static/products_app/images/dress2.jpg"
+	image3 = "/static/products_app/images/dress3.jpg"
+	image4 = "/static/products_app/images/dress4.jpg"
+	size = "9"
+	price = "70"
+	onSale = 1 #1: on sale 0: not on sale
+	onSale_price = 29.99 #If on sale must set on sale price
+	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+	#---------------adding item--------------------------
+	name = "Timerland Hiking Boot"
+	category = "Mens"
+	description = "Men's Limited Release 1978 Waterproof Hiking Boots"
+	image1 = "/static/products_app/images/boot1.png"
+	image2 = "/static/products_app/images/boot2.png"
+	image3 = "/static/products_app/images/boot3.png"
+	image4 = "/static/products_app/images/boot4.png"
+	size = "9"
+	price = "250"
+	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+	#---------------adding item--------------------------
+	
+	all_products = Product.objects.all()
+	#print all_products
+
+	content = {
+		'products': all_products
+	}
+
+	return render(request, 'products_app/show.html', content)
+
