@@ -1,22 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @giselcalvo
- Sign out
- Unwatch 1
-  Star 0
- Fork 0 joekuo135/EcommerceSite
- Code  Issues 0  Pull requests 0  Projects 0  Wiki Insights 
-Tree: ca04f9b1be Find file Copy pathEcommerceSite/apps/products_app/static/products_app/css/style.css
-ca04f9b  2 hours ago
-@joekuo135 joekuo135 no update
-1 contributor
-RawBlameHistory      
-Executable File  74 lines (67 sloc)  1.15 KB
 /* Drop down menu style */
 .dropdown-menu .sub-menu {
   left: 100%;
@@ -75,18 +56,34 @@ flex-wrap: wrap;
 
 #categorybox{
   /* width: 300px; */
-  border: 1px solid black;
+  margin-left:15px;;
+  padding-left:30px;
+  height: 600px;
+  /* border: 1px solid black; */
   display: inline-block;
+  
+}
+.category{
+  color: black;
+}
+.showall{
+  color: black;
 }
 .itemprice{
   font-size: 16pt;
 }
 
 #show_product{
+  margin-top: 13px;
   /* width: 900px;
   height: 600px; */
   display: inline-block;
-  border: 1px solid red;
+  text-align: center;
+  /* border: 1px solid red; */
+}
+#pdescription{
+  line-height: 95%;
+  font-size: 9pt;
 }
 #pprice{
   color: red;
