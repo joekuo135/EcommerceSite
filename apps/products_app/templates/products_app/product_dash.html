@@ -101,7 +101,7 @@
 <div class="row vdivide"></div>   
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row-fluid">
         <section class="align-top col-sm-3" id="categorybox">
             <h3 style='margin-top: 50px; padding: 0px 0px 5px 0px;'>Categories</h3>
                 <ul>
@@ -113,17 +113,19 @@
         </section>
         <section class="col-sm-9" id="show_product">
         <div class="container-fluid">
+        {% for product in products%}
           <div class="col-sm-6 col-md-4 col-lg-2" id="show_product">
-              {% for product in products%}
+              
               <img class="item" src={{product.image1}}>
-              <!-- <img class="item" src={{product.image2}}>
+             <!--  <img class="item" src={{product.image2}}>
               <img class="item" src={{product.image3}}>
               <img class="item" src={{product.image4}}> -->
               <h3>{{product.name}}</h3>
               <p>{{product.description}}</p>
               <p id="pprice">{{product.price}}</p>
-              {% endfor %}
+              
           </div>
+          {% endfor %}
         
         </div>
       </section>
