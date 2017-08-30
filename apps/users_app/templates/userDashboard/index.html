@@ -206,11 +206,13 @@
             {% for product in featuredProducts %}
               <section class="col-sm-6 col-md-4 col-lg-2">
                 <div class="row">
-                  <img class="featuredPic" src={{product.image1}}>
-                </div>
+                  <a href="products/show_product/{{product.id}}"><img class="featuredPic" src={{product.image1}}>
+                </div></a>
                 <h3> {{product.name}}</h3>
                 <p>{{product.description}}</p>
-                <p>{{product.price}}</p>
+                <p>${{product.price}}</p>
+
+                
               </section>
               {% endfor %} 
   
