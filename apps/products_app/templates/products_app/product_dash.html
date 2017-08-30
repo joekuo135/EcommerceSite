@@ -1,3 +1,22 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @giselcalvo
+ Sign out
+ Unwatch 1
+  Star 0
+ Fork 0 joekuo135/EcommerceSite
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki Insights 
+Tree: ca04f9b1be Find file Copy pathEcommerceSite/apps/products_app/templates/products_app/product_dash.html
+ca04f9b  2 hours ago
+@joekuo135 joekuo135 no update
+2 contributors @joekuo135 @giselcalvo
+RawBlameHistory      
+152 lines (139 sloc)  6.4 KB
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +120,7 @@
 <div class="row vdivide"></div>   
 
 <div class="container-fluid">
-    <div class="row-fluid">
+    <div class="row">
         <section class="align-top col-sm-3" id="categorybox">
             <h3 style='margin-top: 50px; padding: 0px 0px 5px 0px;'>Categories</h3>
                 <ul>
@@ -117,7 +136,7 @@
           <div class="col-sm-6 col-md-4 col-lg-2" id="show_product">
               
               <img class="item" src={{product.image1}}>
-             <!--  <img class="item" src={{product.image2}}>
+              <!-- <img class="item" src={{product.image2}}>
               <img class="item" src={{product.image3}}>
               <img class="item" src={{product.image4}}> -->
               <h3>{{product.name}}</h3>
@@ -125,8 +144,7 @@
               <p id="pprice">{{product.price}}</p>
               
           </div>
-          {% endfor %}
-        
+        {% endfor %}
         </div>
       </section>
     </div>
