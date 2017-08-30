@@ -21,6 +21,10 @@ def index(request):
 	print "index"
 	return render(request, 'userDashboard/index.html')
 
+def show_map(request):
+	print "show_map"
+	return render(request, 'userDashboard/map.html')
+
 # def dashboard(request):
 #     #user must be logged in and must be an admin to see page
 #     if request.session.get('user_id', False):

@@ -3,6 +3,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^show_map$', views.show_map),
+    
     # url(r'^signin$', views.signin),
     # url(r'^dashboard$', views.dashboard),
 

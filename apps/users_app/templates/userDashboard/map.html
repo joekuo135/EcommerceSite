@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Store Locations</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 33.19587, lng: -117.379483}
+        });
+        var marker = new google.maps.Marker({
+          position: {lat: 33.19587, lng: -117.379483},
+          map: map,
+        });
+
+          var marker = new google.maps.Marker({
+          position: {lat: 34.1808169, lng: -118.30917950000003},
+          map: map,
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFasR-GLvf2Gj1n_1N7ZcTZPH43kAIoug&callback=initMap">
+    </script>
+  </body>
+</html>

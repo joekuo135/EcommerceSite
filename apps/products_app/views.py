@@ -61,13 +61,34 @@ def show_dashboard(request, category="all"):
 		'categories': ['Mens', 'Womens', 'Kids'],
 	}
 
-	return render(request, 'products_app/product_dash.html', content)
+	return render(request, 'userDashboard/product_dash.html', content)
 
 def create_item(request, name, category,description, image1, image2, image3, image4, size, price):
 
 	product = Product.objects.create(name=name, category=category, description=description, image1=image1, image2=image2, image3=image3, image4=image4, size=size, price=price)
 
 	return True
+
+def add_product(request):
+	#print postData;
+	return render (request, "products_app/addProducts.html")
+
+def process_add_product(request):
+	name = ""
+	category = ""
+	description = ""
+	image1 = "/static/products_app/images/"
+	image2 = "/static/products_app/images/"
+	image3 = "/static/products_app/images/"
+	image4 = "/static/products_app/images/"
+	size = ""
+	price = ""
+	onSale =  "" #(optional) 1: on sale 0: not on sale
+	onSale_price = "" #If on sale must set on sale price
+	newArrival = "" #(optional) 1 for new, 0 for regular
+	
+	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+
 
 def populate_database(request):
 	name = "A-line Dress"
