@@ -61,7 +61,7 @@ def show_dashboard(request, category="all"):
 		'categories': ['Mens', 'Womens', 'Kids'],
 	}
 
-	return render(request, 'userDashboard/product_dash.html', content)
+	return render(request, 'products_app/product_dash.html', content)
 
 def create_item(request, name, category,description, image1, image2, image3, image4, size, price):
 
@@ -99,7 +99,7 @@ def populate_database(request):
 	image3 = "/static/products_app/images/912756_bk_xl.jpg"
 	image4 = "/static/products_app/images/912756_detail.mp4"
 	size = "Medium"
-	price = "$3,685"
+	price = "3685"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
@@ -112,7 +112,7 @@ def populate_database(request):
 	image3 = "/static/products_app/images/913578_bk_xl.jpg"
 	image4 = "/static/products_app/images/913578_detail.mp4"
 	size = "Medium"
-	price = "$1,200"
+	price = "1200"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
@@ -125,7 +125,7 @@ def populate_database(request):
 	image3 = "/static/products_app/images/889614_bk_xl.jpg"
 	image4 = "/static/products_app/images/889614_detail.mp4"
 	size = "Medium"
-	price = "$955"
+	price = "955"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
