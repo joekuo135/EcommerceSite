@@ -29,7 +29,7 @@
 
 .item{
   display: inline-block;
-  width: 20%;
+  width: 40%;
   /* margin-right: 30px;
   margin-bottom: 30px; */
   vertical-align: top;
@@ -59,10 +59,16 @@ flex-wrap: wrap;
   border: 1px solid black;
   display: inline-block;
 }
+.itemprice{
+  font-size: 16pt;
+}
 
 #show_product{
   /* width: 900px;
   height: 600px; */
   display: inline-block;
   border: 1px solid red;
+}
+#pprice{
+  color: red;
 }

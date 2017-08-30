@@ -91,15 +91,41 @@ def process_add_product(request):
 
 
 def populate_database(request):
-	name = "A-line Dress"
+	name = "ROLAND MOURET"
 	category = "Womens"
-	description = "Dress with fun patterns!"
-	image1 = "/static/products_app/images/dress1.jpg"
-	image2 = "/static/products_app/images/dress2.jpg"
-	image3 = "/static/products_app/images/dress3.jpg"
-	image4 = "/static/products_app/images/dress4.jpg"
+	description = "Letwell appliqued tulle midi dress"
+	image1 = "/static/products_app/images/912756_in_xl.jpg"
+	image2 = "/static/products_app/images/912756_ou_xl.jpg"
+	image3 = "/static/products_app/images/912756_bk_xl.jpg"
+	image4 = "/static/products_app/images/912756_detail.mp4"
 	size = "Medium"
-	price = 70
+	price = "$3,685"
+	onSale = 1 #1: on sale 0: not on sale
+	onSale_price = 29.99 #If on sale must set on sale price
+	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+	#---------------adding item--------------------------
+	name = "TEMPERLEY LONDON "
+	category = "Womens"
+	description = "Starling cold-shoulder embellished chiffon midi dress"
+	image1 = "/static/products_app/images/913578_in_xl.jpg"
+	image2 = "/static/products_app/images/913578_ou_xl.jpg"
+	image3 = "/static/products_app/images/913578_bk_xl.jpg"
+	image4 = "/static/products_app/images/913578_detail.mp4"
+	size = "Medium"
+	price = "$1,200"
+	onSale = 1 #1: on sale 0: not on sale
+	onSale_price = 29.99 #If on sale must set on sale price
+	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+	#---------------adding item--------------------------
+	name = "TEMPERLEY LONDON "
+	category = "Womens"
+	description = "Starling cold-shoulder embellished chiffon midi dress"
+	image1 = "/static/products_app/images/889614_in_xl.jpg"
+	image2 = "/static/products_app/images/889614_ou_xl.jpg"
+	image3 = "/static/products_app/images/889614_bk_xl.jpg"
+	image4 = "/static/products_app/images/889614_detail.mp4"
+	size = "Medium"
+	price = "$955"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)

@@ -112,16 +112,21 @@
                 </ul>
         </section>
         <section class="col-sm-9" id="show_product">
-            {% for product in products%}
-            <h1>{{product.name}}</h1>
-            <p>{{product.description}}</p>
-            <img class="item" src={{product.image1}}>
-            <img class="item" src={{product.image2}}>
-            <img class="item" src={{product.image3}}>
-            <img class="item" src={{product.image4}}>
-            <p>{{product.price}}</p>
-            {% endfor %}
-        </section>
+        <div class="container-fluid">
+          <div class="col-sm-6 col-md-4 col-lg-2" id="show_product">
+              {% for product in products%}
+              <img class="item" src={{product.image1}}>
+              <!-- <img class="item" src={{product.image2}}>
+              <img class="item" src={{product.image3}}>
+              <img class="item" src={{product.image4}}> -->
+              <h3>{{product.name}}</h3>
+              <p>{{product.description}}</p>
+              <p id="pprice">{{product.price}}</p>
+              {% endfor %}
+          </div>
+        
+        </div>
+      </section>
     </div>
 </div> <!-- end container-fluid -->
 
@@ -129,3 +134,19 @@
 
 </body>
 </html>
+
+<div class="container-fluid" id="services">
+    <div class="row">
+    {% for product in featuredProducts %}
+      <section class="col-sm-6 col-md-4 col-lg-2">
+        <div class="row">
+          <img class="featuredPic" src={{product.image1}}>
+        </div>
+        <h3> {{product.name}}</h3>
+        <p>{{product.description}}</p>
+        <p>{{product.price}}</p>
+      </section>
+      {% endfor %} 
+ 
+    </div>
+  </div>
