@@ -60,7 +60,7 @@ flex-wrap: wrap;
   /* width: 300px; */
   margin-left:15px;;
   padding-left:30px;
-  height: 600px;
+  /* height: 600px; */
   /* border: 1px solid black; */
   display: inline-block;
   
@@ -94,8 +94,10 @@ flex-wrap: wrap;
   font-size: 1.1em;
 }
 .pdetails{
+  width: 600px;
   vertical-align: top;
   display: inline-block;
+  margin: 15px 0 0 10px;
 }
 #productbox{
   vertical-align: top;
