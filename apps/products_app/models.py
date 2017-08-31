@@ -7,7 +7,8 @@ class Product(models.Model):
 	name = models.CharField(max_length=255) 
 	category = models.CharField(max_length=255, null=True) #Mens, Womens, Kids,
 	subCategory = models.CharField(max_length=255, null=True) #Apperal, Footwear, Jewelry, Watches
-	description = models.TextField()
+	description = models.TextField(null=True)
+	fullDescription = models.TextField(null=True)
 	image1 = models.CharField(max_length=255)
 	image2 = models.CharField(max_length=255)
 	image3 = models.CharField(max_length=255)

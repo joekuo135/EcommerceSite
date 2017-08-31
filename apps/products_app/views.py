@@ -68,9 +68,9 @@ def show_dashboard(request, category="all"):
 
 	return render(request, 'products_app/product_dash.html', content)
 
-def create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price):
+def create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price):
 
-	product = Product.objects.create(name=name, category=category, subCategory=subCategory, description=description, image1=image1, image2=image2, image3=image3, image4=image4, size=size, price=price)
+	product = Product.objects.create(name=name, category=category, subCategory=subCategory, description=description, fullDescription=fullDescription, image1=image1, image2=image2, image3=image3, image4=image4, size=size, price=price)
 
 	return True
 
@@ -82,6 +82,7 @@ def process_add_product(request):
 	name = ""
 	category = ""
 	description = ""
+	fullDescription = ""
 	image1 = "/static/products_app/images/"
 	image2 = "/static/products_app/images/"
 	image3 = "/static/products_app/images/"
@@ -92,7 +93,7 @@ def process_add_product(request):
 	onSale_price = "" #If on sale must set on sale price
 	newArrival = "" #(optional) 1 for new, 0 for regular
 	
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 
 #---------------WOMENS adding item--------------------------
 def populate_database(request):
@@ -100,6 +101,7 @@ def populate_database(request):
 	category = "Womens"
 	subCategory = "Apperal"
 	description = "Letwell appliqued tulle midi dress"
+	fullDescription = " This is a test of fullDescription Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress"
 	image1 = "/static/products_app/images/912756_in_xl.jpg"
 	image2 = "/static/products_app/images/912756_ou_xl.jpg"
 	image3 = "/static/products_app/images/912756_bk_xl.jpg"
@@ -108,12 +110,13 @@ def populate_database(request):
 	price = "3685"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	name = "TEMPERLEY LONDON"
 	category = "Womens"
 	subCategory = "Apperal"
 	description = "Starling cold-shoulder embellished chiffon midi dress"
+	fullDescription = " This is a test of fullDescription Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress"
 	image1 = "/static/products_app/images/913578_in_xl.jpg"
 	image2 = "/static/products_app/images/913578_ou_xl.jpg"
 	image3 = "/static/products_app/images/913578_bk_xl.jpg"
@@ -122,12 +125,13 @@ def populate_database(request):
 	price = "1200"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	name = "ISABEL MARANT"
 	category = "Womens"
 	subCategory = "Apperal"
 	description = "Starling cold-shoulder embellished chiffon midi dress"
+	fullDescription = " This is a test of fullDescription Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress"
 	image1 = "/static/products_app/images/889614_in_xl.jpg"
 	image2 = "/static/products_app/images/889614_ou_xl.jpg"
 	image3 = "/static/products_app/images/889614_bk_xl.jpg"
@@ -136,42 +140,45 @@ def populate_database(request):
 	price = "955"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------MENS adding item--------------------------
 	name = "HERITAGE JACQUARD SUIT"
 	category = "Mens"
 	subCategory = "Apperal"
 	description = "Gucci designer silk jacquard"
+	fullDescription = " This is a test of fullDescription Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress"
 	image1 = "/static/products_app/images/mens_apparel_001a.jpg"
 	image2 = "/static/products_app/images/mens_apparel_001b.jpg"
 	image3 = "/static/products_app/images/mens_apparel_001c.jpg"
 	size = "46"
 	price = 2950
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	name = "WOOLEN SUIT WITH PATCH"
 	category = "Mens"
 	subCategory = "Apperal"
 	description = "Dolce & Gabbana Designer Suit"
+	fullDescription = " This is a test of fullDescription Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress"
 	image1 = "/static/products_app/images/mens_apparel_002a.jpg"
 	image2 = "/static/products_app/images/mens_apparel_002b.jpg"
 	image3 = "/static/products_app/images/mens_apparel_002c.jpg"
 	image4 = "/static/products_app/images/mens_apparel_002d.jpg"
 	size = "44"
 	price = 2995
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	name = "SINGLE-BREASTED WEDDING SUIT"
 	category = "Mens"
 	subCategory = "Apperal"
 	description = "Dolce & Gabbana 3-pieces Designer Suit"
+	fullDescription = " This is a test of fullDescription Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress Letwell appliqued tulle midi dress"
 	image1 = "/static/products_app/images/mens_apparel_003a.jpg"
 	image2 = "/static/products_app/images/mens_apparel_003b.jpg"
 	image3 = "/static/products_app/images/mens_apparel_003c.jpg"
 	image4 = "/static/products_app/images/mens_apparel_003d.jpg"
 	size = "48"
 	price = 2195
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	# name = ""
 	# category = ""
