@@ -39,19 +39,6 @@
   margin: 10px;
 
 }
-
-
-
-/* .messages {
-  color: rgba(255,0,0,1)
-} */
-
-/* #logo, #logo>img {
-  max-width: 50px;
-  vertical-align: center;
-} */
-
-
 #womenPress {
   /* margin: 10px; */
   min-height: 650px;
@@ -119,6 +106,8 @@
   padding: 10px;
 } */
 
+
+/* MIDDLE HERO SECTION */
 .hero_image{
   background-image: url('../images/middlepic.jpg');
   background-position: center center;
@@ -126,6 +115,8 @@
   height:900px;
   margin:50px 0 50px 0;
 }
+
+/* BOTTOM FEATURED SECTION */
 .featuredPic{
   width: 100%;
   height: 100%
@@ -136,8 +127,6 @@
 .featureddscri{
   line-height: 95%;
   margin-bottom: 5px;
-  
-
 }
 .featureddprice{
   margin-top:-5px;
@@ -152,5 +141,36 @@ p{
 #services{
   text-align: center;
   margin-bottom: 30px;
-
 }
+
+/* REGISTRATION PAGE */
+
+#registrationPage {
+  background: url('../images/box_b_300.png');
+  max-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+}
+
+.bkgd {
+  background: url('../images/box_pink_300.png') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+#registForm {
+  color:  white;
+  text-align: left;
+  font-size: large;
+}
+#registForm h1 {
+  color: black;
+}
+#registForm a {
+  color: black;
+}
+
