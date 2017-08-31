@@ -142,6 +142,20 @@ def populate_database(request):
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------MENS adding item--------------------------
+	name = "ALEXANDER WANG"
+	category = "Womens"
+	subCategory = "Footwear"
+	description = "Eri studded leather ankle boots"
+	image1 = "/static/products_app/images/891293_in_xl.jpg"
+	image2 = "/static/products_app/images/891293_fr_xl.jpg"
+	image3 = "/static/products_app/images/891293_bk_xl.jpg"
+	image4 = "/static/products_app/images/891293_ou_xl.jpg"
+	size = "10"
+	price = "850"
+	onSale = 1 #1: on sale 0: not on sale
+	onSale_price = 29.99 #If on sale must set on sale price
+	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	#---------------MENS adding item--------------------------
 	name = "HERITAGE JACQUARD SUIT"
 	category = "Mens"
 	subCategory = "Apperal"
