@@ -99,15 +99,14 @@
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
         <hr>
-<!-- 
-<img src={{product.image3}}>
-<img src={{product.image4}}> -->
+
 	<div class="container-fluid">
 		<div class="row">
-			<section class="align-top col-sm-6" id="productbox">
+			<section class="align-top col-sm-4" id="productbox">
 				<h3 id="productName">{{product.name}}</h3>
-				<img src="{{product.image1}}" alt="{{product.name}}" id="picsize">
+				<img class="thumbnail zoom" src="{{product.image1}}" alt="{{product.name}}" id="picsize">
 				<ul style="padding-left: 0";>
+					<li class="product_thumbnail"><img src={{product.image1}} class="product_thumbnail"></li>
 					<li class="product_thumbnail"><img src={{product.image2}} class="product_thumbnail"></li>
 					<li class="product_thumbnail"><img src={{product.image3}} class="product_thumbnail"></li>
 					<li class="product_thumbnail"><img src={{product.image4}} class="product_thumbnail"></li>
@@ -115,21 +114,40 @@
 			</section>
 			
 			<div class="pdetails">
-				<section class="align-top col-sm-6" id="productbox2">
-				<div class="row">
-				<p class="largep">{{product.description}}</p>
-				</div>
+				<section class="align-top col-md-6 col-lg-10" id="productbox2">
+					<div class="row">
+					<table class="table table-striped">
+						<tr>
+							<th scope="row">Item</th>
+							<td class="largep">{{product.name}}</td>
+						</tr>
+						<tr>
+							<th scope="row"> Description</th>
+							<td class="largep">{{product.description}}</td>
+						</tr>
+						<tr>
+							<th scope="row">Price</th>
+							<td class="largep">${{product.price}}</td>
+						</tr>
+					</div>
+					<a href='/products/show_dashboard/Womens'>Back to Apparel</a>	
+					</table>
 					<form id="addCart" action="/products/addtocart" method="post">
-					{% csrf_token %}
-					<input type="hidden" name='prodid' value='{{product.id}}'>
-					<h5>Quantity</h5>
-					<select id="addCount" class="btn btn-inverse" name="quantity" id="item priice">
+						{% csrf_token %}
+						<input type="hidden" name='prodid' value='{{product.id}}'>
+						<h5>Sizes</h5>
+						<select id="addCount" class="btn btn-lg btn-default" name="size" id="item size">
+						<option value="30">30</option>
+						<option value="32">32</option>
+						<option value="34">34</option>
+						</select>
+						<h5>Quantity</h5>
+						<select id="addCount" class="btn btn-lg btn-default" name="quantity" id="item quantity">
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
-					</select>
-					<input class="btn btn-inverse" type="submit" value='Add to Cart'>
-					<a href='/products'>Go Back</a>
+						</select>
+						<input class="btn btn-default active" type="submit" value='Add to Cart'>	
 					</form>
 				</section>
 			</div>
