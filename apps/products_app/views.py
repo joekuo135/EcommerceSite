@@ -154,7 +154,7 @@ def populate_database(request):
 	price = "850"
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
-	create_item(request, name, category, subCategory, description, image1, image2, image3, image4, size, price)
+	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
 	#---------------MENS adding item--------------------------
 	name = "HERITAGE JACQUARD SUIT"
 	category = "Mens"
