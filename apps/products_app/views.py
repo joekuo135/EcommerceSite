@@ -89,7 +89,7 @@ def process_add_product(request):
 	
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
 
-
+#---------------WOMENS adding item--------------------------
 def populate_database(request):
 	name = "ROLAND MOURET"
 	category = "Womens"
@@ -104,7 +104,7 @@ def populate_database(request):
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
-	name = "TEMPERLEY LONDON "
+	name = "TEMPERLEY LONDON"
 	category = "Womens"
 	description = "Starling cold-shoulder embellished chiffon midi dress"
 	image1 = "/static/products_app/images/913578_in_xl.jpg"
@@ -117,7 +117,7 @@ def populate_database(request):
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
-	name = "TEMPERLEY LONDON "
+	name = "ISABEL MARANT"
 	category = "Womens"
 	description = "Starling cold-shoulder embellished chiffon midi dress"
 	image1 = "/static/products_app/images/889614_in_xl.jpg"
@@ -129,16 +129,38 @@ def populate_database(request):
 	onSale = 1 #1: on sale 0: not on sale
 	onSale_price = 29.99 #If on sale must set on sale price
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
-	#---------------adding item--------------------------
-	name = "Timerland Hiking Boot"
+	#---------------MENS adding item--------------------------
+	name = "HERITAGE JACQUARD SUIT"
 	category = "Mens"
-	description = "Men's Limited Release 1978 Waterproof Hiking Boots"
-	image1 = "/static/products_app/images/boot1.png"
-	image2 = "/static/products_app/images/boot2.png"
-	image3 = "/static/products_app/images/boot3.png"
+	description = "Gucci designer silk jacquard"
+	image1 = "/static/products_app/images/mens_apparel_001a.jpg"
+	image2 = "/static/products_app/images/mens_apparel_001b.jpg"
+	image3 = "/static/products_app/images/mens_apparel_001c.jpg"
 	image4 = "/static/products_app/images/boot4.png"
-	size = "9"
-	price = 250
+	size = "46"
+	price = 2950
+	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+	#---------------adding item--------------------------
+	name = "WOOLEN SUIT WITH PATCH"
+	category = "Mens"
+	description = "Dolce & Gabbana Designer Suit"
+	image1 = "/static/products_app/images/mens_apparel_002a.jpg"
+	image2 = "/static/products_app/images/mens_apparel_002b.jpg"
+	image3 = "/static/products_app/images/mens_apparel_002c.jpg"
+	image4 = "/static/products_app/images/mens_apparel_002d.jpg"
+	size = "44"
+	price = 2995
+	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
+	#---------------adding item--------------------------
+	name = "SINGLE-BREASTED WEDDING SUIT"
+	category = "Mens"
+	description = "Dolce & Gabbana 3-pieces Designer Suit"
+	image1 = "/static/products_app/images/mens_apparel_003a.jpg"
+	image2 = "/static/products_app/images/mens_apparel_003b.jpg"
+	image3 = "/static/products_app/images/mens_apparel_003c.jpg"
+	image4 = "/static/products_app/images/mens_apparel_003d.jpg"
+	size = "48"
+	price = 2195
 	create_item(request, name, category,description, image1, image2, image3, image4, size, price)
 	#---------------adding item--------------------------
 	# name = ""

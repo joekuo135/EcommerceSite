@@ -88,3 +88,6 @@ flex-wrap: wrap;
 #pprice{
   color: red;
 }
+.ptitle{
+  font-size: 1.1em;
+}
