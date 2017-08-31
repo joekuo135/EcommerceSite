@@ -25,7 +25,9 @@
   margin-top: 90px;
 }
 /* END Drop down menu style */
-
+.logo{
+  color:black;
+}
 
 .item{
   display: inline-block;
@@ -90,4 +92,33 @@ flex-wrap: wrap;
 }
 .ptitle{
   font-size: 1.1em;
+}
+.pdetails{
+  vertical-align: top;
+  display: inline-block;
+}
+#productbox{
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 20px;
+}
+/* .pdetails .pidetails{
+  vertical-align: top;
+  display: inline-block;
+} */
+#productName{
+  margin-top:0;
+}
+#picsize{
+  width: 400px;
+}
+.largep{
+  width: 200px;
+  font-size: 14pt;
+}
+.product_thumbnail{
+  width: 60px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px 2px 0 0;
 }

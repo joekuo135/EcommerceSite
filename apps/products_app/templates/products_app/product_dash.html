@@ -44,7 +44,7 @@
     <!-- COMPANY LOGO --> 
     <div class="container-fluid">      
       <div class="justify-content-center text-center">
-        <h3>SHOPSTYLE</h3>
+        <h3><a class="logo" href="/products">SHOPSTYLE</a></h3>
         <!-- <img id="logo" class="icon-bar" src=""> -->
       </div>
     </div> <!-- close container --> 
@@ -100,35 +100,32 @@
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
         <hr>
 <div class="container-fluid">
-    <div class="row">
-        <section class="align-top col-sm-2" id="categorybox">
-            <h4 style='margin-top: 20px; padding: 0px 0px 5px 0px;'>CATEGORIES</h4>
-                <ul>
-                    {%for category in categories%}
-                    <li style="list-style:none;"><a class='category' href="/products/show_dashboard/{{category}}">{{category}}</a></li>
-                    {%endfor%}
-                    <li style="list-style:none; margin-top: 20px;"><a class='showall' href="/products/all/1">Show all</a></li>
-                </ul>
-        </section>
-        <section class="col-sm-9" id="show_product">
-        
-        <div class="container-fluid">
+  <div class="row">
+    <section class="align-top col-sm-2" id="categorybox">
+      <h4 style='margin-top: 20px; padding: 0px 0px 5px 0px;'>CATEGORIES</h4>
+        <ul>
+          {%for category in categories%}
+          <li style="list-style:none;"><a class='category' href="/products/show_dashboard/{{category}}">{{category}}</a></li>
+          {%endfor%}
+          <li style="list-style:none; margin-top: 20px;"><a class='showall' href="/products/all/1">Show all</a></li>
+        </ul>
+    </section>
+    <section class="col-sm-9" id="show_product">
+      <div class="container-fluid">
         {% for product in products%}
-          <div class="col-sm-6 col-md-4 col-lg-2" id="show_product">
-              
-              <img class="item" src={{product.image1}}>
-              <!-- <img class="item" src={{product.image2}}>
-              <img class="item" src={{product.image3}}>
-              <img class="item" src={{product.image4}}> -->
-              <h4 class="ptitle">{{product.name}}</h4>
-              <p id="pdescription">{{product.description}}</p>
-              <p id="pprice">${{product.price}}</p>
-              
-          </div>
-        {% endfor %}
+        <div class="col-sm-6 col-md-4 col-lg-2" id="show_product">
+          <img class="item" src={{product.image1}}>
+          <!-- <img class="item" src={{product.image2}}>
+          <img class="item" src={{product.image3}}>
+          <img class="item" src={{product.image4}}> -->
+          <h4 class="ptitle">{{product.name}}</h4>
+          <p id="pdescription">{{product.description}}</p>
+          <p id="pprice">${{product.price}}</p>
         </div>
-      </section>
-    </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
 </div> <!-- end container-fluid -->
 
 
