@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from EcommerceSite.users_app.models import User
-from EcommerceSite.products_app.models import Product
+#from EcommerceSite.users_app.models import User
+#from EcommerceSite.products_app.models import Product
 
 
 # Create your models here.
