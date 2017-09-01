@@ -42,8 +42,8 @@ def login(request):
         try:
             current_user = User.objects.get(email = request.POST['email'])
             if bcrypt.checkpw(request.POST['password'].encode(), current_user.password.encode()):
-                request.session['user_id'] = current_user.id
-                    request.session['isAdmin'] = True
+                if request.session['user_id'] == current_user.id()
+                	request.session['isAdmin'] = True
                     return redirect('/dashboard')
                 else:
                     request.session['isAdmin'] = False

@@ -16,34 +16,33 @@ class UserManager(models.Manager):
 
         if len(postData['email']) <1:
             errors["email1"]= "Please enter your email address!"
-            elif not EMAIL_REGEX.match(postData['email']):
-                errors["email2"]= "Please enter a valid email address!"
+        elif not EMAIL_REGEX.match(postData['email']):
+            errors["email2"]= "Please enter a valid email address!"
 
         if len(postData['first_name']) < 1:
             errors["first_name1"] = "First name is required!"
-            else:
-                if len(postData['first_name']) < 3:
+        else:
+            if len(postData['first_name']) < 3:
                     errors["first_name2"] = "First name must be at least 3 characters!"
-                if not noNumberPls.match(postData['last_name']):
+            if not noNumberPls.match(postData['last_name']):
                     errors["first_name3"]= "First name should have no numbers or special characters in it!"
 
         if len(postData['last_name']) < 1:
             errors["last_name1"] = "Last name is required!"
-            else:
-                if len(postData['last_name']) < 3:
+        else:
+            if len(postData['last_name']) < 3:
                     errors["last_name2"] = "Last name must be at least 3 characters!"
-                if not noNumberPls.match(postData['last_name']):
+            if not noNumberPls.match(postData['last_name']):
                     errors["last_name3"]= "Last name should have no numbers or special characters in it!"
 
         if len(postData['password']) < 1:
             errors["password1"] = "Password is required!"
-            else:
-                if len(postData['password']) < 8:
-                    errors["password2"] = "Password must be at least 8 characters!"
+        else:
+            if len(postData['password']) < 8:
+                errors["password2"] = "Password must be at least 8 characters!"
 
-                if postData['password'] != postData['pass_confirm']:
-                    errors["password3"] = "Password and confirmation field must match!"
-
+            if postData['password'] != postData['pass_confirm']:
+                errors["password3"] = "Password and confirmation field must match!"
 
         if postData['birthday'] == '':
             errors['birthday1'] = "Must enter hired date!"
