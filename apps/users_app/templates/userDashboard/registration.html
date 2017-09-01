@@ -38,7 +38,7 @@
       <div class="col-sm-10 col-md-8 col-lg-5">
         <section class="col-sm-10 align-right">
           <div class="registration-form">  
-            <ul class="messages">
+            <ul class="messages" style="color: #FF00A2">
                 {% if messages %}
                 {% for message in messages %}
                   <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
@@ -87,7 +87,7 @@
                   <input class="btn btn-default" type="submit" value="Register">
                 </div>
               <fieldset>
-              <a href="/signin">Already have an account? Login</a>
+              <a href="/create_user">Already have an account? Login</a>
             </form>
         
           </div>

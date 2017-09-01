@@ -152,7 +152,9 @@ p{
   background-size: cover;
 } */
 
-
+.messages {
+  color: rgba(255,0,0,1)
+}
 .bkgd {
   background: url('../images/box_pink_300.png') no-repeat center center;
   position: fixed;
