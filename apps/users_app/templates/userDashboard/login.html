@@ -29,66 +29,38 @@
   <hr>
 
   <div class="text-center" style="margin-top:60px;">
-      <h3>REGISTER NOW</h3>
-      <p>Set up a SHOPSTYLE account and enjoy these key benefits and more.</p>
+      <h3>CUSTOMER LOGIN</h3>
   </div>
   <div class="container-fluid">
     <div class="row">
     <div class="col-sm-1"></div>
       <div class="col-sm-10 col-md-8 col-lg-5">
         <section class="col-sm-10 align-right">
-          <div class="registration-form">  
-            <ul class="messages">
-                {% if messages %}
-                {% for message in messages %}
-                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-                {% endif %}
-            </ul>
+          <div class="registration-form">
             <form class="form grouped-form style-scope nap-form" action="/register/create" method="post" id="register-form" name="register-form">
               {% csrf_token %}
               <fieldset class="form-group">
                 <div class="form-group">
                   <label class="form-control-label" for="emailaddress">Email Address:</label>
                   <input class="form-control" type="text" name="email" id="emailaddress">
-                  <small class="form-text text-muted" id="emailHelp">We'll never share your email</small>
-                </div>
-                <div class="form-group">
-                  <label class="form-control-label" for="firstname">First Name:</label>
-                  <input class="form-control" type="text" name="first_name" id="firstname">
-                </div>
-                <div class="form-group">
-                  <label class="form-control-label" for="lastname">Last Name:</label>
-                  <input class="form-control" type="text" name="last_name" id="lastname">
-                </div>
-                <div class="form-group">
-                  <label class="form-control-label" for="dateofbirthday">Date of Birth:</label>
-                  <input class="form-control" type="date" name="birthday" id="dateofbirth">
                 </div>
                 <div class="form-group">
                   <label class="form-control-label" for="password">Password:</label>
                   <input class="form-control" type="password" name="password" placeholder="At least 6 characters">
                 </div>
                 <div class="form-group">
-                  <label class="form-control-label">Password Confirmation:</label>
-                  <input class="form-control" type="password" name="conf_pass">
-                </div>
-                <div class="form-group row">
-                  <div class="form-check col-1">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="subscription">
-                    </label>
-                  </div>
-                  <small class="col-9">Check the box if you would like to receive style updates, fashion news, and SHOPSTYLE offers via email</small>
-                </div>
-
-                <div class="form-group">
-                  <input class="btn btn-default" type="submit" value="Register">
+                  <input class="btn btn-default" type="submit" value="Login">
                 </div>
               <fieldset>
-              <a href="/signin">Already have an account? Login</a>
             </form>
-        
+            
+            <ul class="messages">
+            {% if messages %}
+            {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            {% endif %}
+            </ul>
           </div>
             <!-- <div class="col-md-4"></div> -->
         </section>
@@ -97,8 +69,7 @@
         <div class="benefits">
           <div class="row-fluid">
           <section>
-            <img src="/static/userDashboard/images/emailSignup.jpg/" style="width:400px; margin-top:20px;" id="benefitsimg">
-            
+              <h5>New Customer? Create a new account. It's easy and so many benefits...</h5>
               <ul class="justify-content-center" style="margin-top: 20px;" id="benefit-list">
                 <li class="active">Fast sign in and checkout plus delivery updates</li>
                 <li>Fashion, beauty and fitness emails from our Editors</li>
@@ -106,7 +77,9 @@
                 <li>Receive invites to sales, offers and more</li>
                 <li>Alerts when items arrive from your favourite designers</li>
               </ul>
+              <input type="button" class="btn btn-default" value="Create New Account" onclick="location.href = '/userDashboard/registration.html/';">
           </section>
+
           </div>
         </div>
    

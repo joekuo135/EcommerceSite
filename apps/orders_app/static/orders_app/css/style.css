@@ -1,0 +1,149 @@
+/* Drop down menu style */
+.dropdown-menu .sub-menu {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  margin-top: -1px;
+}
+.dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.nav-tabs .dropdown-menu, .navbar .dropdown-menu {
+  margin-top: 0;
+}
+.nav-link {color: #010000;}
+
+#accessMenu {
+  margin-top: 0px;
+  border: 0px;
+}
+#exclusiveSubmenu {
+  margin-top: 90px;
+}
+/* END Drop down menu style */
+.logo{
+  color:black;
+}
+
+.item{
+  display: inline-block;
+   width: 100%; 
+  /* margin-right: 30px;
+  margin-bottom: 30px; */
+  vertical-align: top;
+  /* min-height: 300px; */
+
+}
+.item>p{
+font-size: large;
+color: rgba(0,123,0,.75);
+text-decoration: none;
+margin: 10px 0px 0px 0px;
+padding: 10px;
+text-align: center;
+flex-wrap: wrap;
+max-width: 200px;
+}
+
+.item a{
+color: rgba(0,123,255,.75);
+text-align: center;
+padding: 10px 20px 10px 20px;
+flex-wrap: wrap;
+}
+
+#categorybox{
+  /* width: 300px; */
+  margin-left:15px;;
+  padding-left:30px;
+  /* height: 600px; */
+  /* border: 1px solid black; */
+  display: inline-block;
+  
+}
+.category{
+  color: black;
+}
+.showall{
+  color: black;
+}
+.itemprice{
+  font-size: 16pt;
+}
+
+#show_product{
+  margin-top: 13px;
+  /* width: 900px;
+  height: 600px; */
+  display: inline-block;
+  text-align: center;
+  /* border: 1px solid red; */
+}
+#pdescription{
+  line-height: 95%;
+  font-size: 9pt;
+}
+#pprice{
+  color: #FF00A2;
+}
+.ptitle{
+  font-size: 1.1em;
+}
+.pdetails{
+  width: 600px;
+  vertical-align: top;
+  display: inline-block;
+  margin: 15px 0 0 10px;
+}
+#productbox{
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 40px;
+}
+/* .pdetails .pidetails{
+  vertical-align: top;
+  display: inline-block;
+} */
+#productName{
+  margin-top:0;
+}
+#picsize{
+  width: 400px;
+}
+.largep{
+  width: 80%;
+  font-size: 12pt;
+}
+.product_thumbnail{
+  width: 60px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px 2px 0 0;
+}
+.zoom {      
+  -webkit-transition: all 0.35s ease-in-out;    
+  -moz-transition: all 0.35s ease-in-out;    
+  transition: all 0.35s ease-in-out;     
+  cursor: -webkit-zoom-in;      
+  cursor: -moz-zoom-in;      
+  cursor: zoom-in;  
+  }     
+  
+  .zoom:hover,  
+  .zoom:active,   
+  .zoom:focus {
+  /**adjust scale to desired size, 
+  add browser prefixes**/
+  -ms-transform: scale(2.5);    
+  -moz-transform: scale(2.5);  
+  -webkit-transform: scale(2.5);  
+  -o-transform: scale(2.5);  
+  transform: scale(2.5);    
+  position:relative;      
+  z-index:100;
+  margin: 15vw 0 0 15vw; 
+  }
