@@ -10,7 +10,9 @@ from time import gmtime, strftime
 import re
 import bcrypt
 import math
-#from models import User
+from models import User
+from ..products_app.models import Product
+from ..orders_app.models import Order
 
 
 
@@ -19,4 +21,18 @@ import math
 
 def index(request):
 	print "index"
-	return render(request, 'userDashboard/index.html')
+	return render(request, 'orders_app/cart.html')
+
+
+
+def update_cart(request, product_id):
+	#get product
+	product = Product.objects.get(id=product_id)
+	#get users order
+	order = Order.objects.get(user=request.session['id'])
+	order.objects.add.products(product)
+	return render(request, '/carts')
+
+
+	
+

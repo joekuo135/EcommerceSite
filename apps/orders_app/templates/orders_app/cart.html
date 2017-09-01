@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'products_app/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'products_app/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'products_app/css/bootstrap-grid.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'products_app/js/jquery-3.2.1.slim.min.js' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'products_app/js/tether.min.js' %}"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Registration</title>
+</head>
+<body>
+  <!-- COMPANY LOGO --> 
+  <div class="container-fluid">      
+    <div class="justify-content-center text-center">
+      <h3><a class="logo" href="/products">SHOPSTYLE</a></h3>
+      <!-- <img id="logo" class="logo" src=""> -->
+      </div>
+  </div> <!-- close container --> 
+
+
+
+<table>
+<tr>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Price</th>
+</tr>
+{% for product in products%}
+<tr>
+  <td>{{product.name}}</td>
+  <td>{{product.description}}</td>
+  <td>{{product.total}}</td>
+  </tr>
+  {% endfor%}
+  <tr>
+    <td></td>
+    <td>Total</td>
+    <td></td>
+  </tr>
+
+</table>
+  
+
+
+</body>
+</html>

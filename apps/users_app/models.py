@@ -2,7 +2,9 @@ from __future__ import unicode_literals
 
 from django.db import models
 from datetime import datetime, timedelta
+
 import re
+
 
 EMAIL_REGEX= re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 noNumberPls = re.compile(r'^[a-zA-Z]+$')
@@ -64,6 +66,8 @@ class User(models.Model):
     email = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
     birthday = models.DateTimeField(null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
     objects = UserManager()
+
+    

@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from ..orders_app.models import Order
 # Create your models here.
 class Product(models.Model):
 	name = models.CharField(max_length=255) 
@@ -18,6 +18,9 @@ class Product(models.Model):
 	onSale = models.BooleanField(default = 0) 
 	onSale_price = models.FloatField(null=True)
 	newArrival = models.BooleanField(default = 0)
+
+	order = models.ManyToManyField(Order, related_name = "products")
+	
 	
 
 	

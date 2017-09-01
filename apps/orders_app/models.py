@@ -1,12 +1,12 @@
 from __future__ import unicode_literals
 
 from django.db import models
-#from EcommerceSite.users_app.models import User
-#from EcommerceSite.products_app.models import Product
+from ..users_app.models import User
+#from ..products_app.models import Product
 
 
 # Create your models here.
 class Order(models.Model):
-	#products = models.ForeignKey(Product, related_name = "ordered_product")
-	#user = models.ForeignKey(User, related_name ="users_order")
-	pass
+	user = models.ForeignKey(User, related_name ="users_order", null=True)
+	status = models.CharField(max_length=255, null=True) #in_process, completed
+	#products = models.ManyToManyField(Product)
