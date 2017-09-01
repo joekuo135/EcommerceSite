@@ -145,12 +145,13 @@ p{
 
 /* REGISTRATION PAGE */
 
-#registrationPage {
+/* #registrationPage {
   background: url('../images/box_b_300.png');
   max-width: 100%;
   min-height: 100%;
   background-size: cover;
-}
+} */
+
 
 .bkgd {
   background: url('../images/box_pink_300.png') no-repeat center center;
@@ -161,16 +162,17 @@ p{
   left:0;
   z-index: -1;
 }
+.registration-form{
+  display: inline-block;
+  vertical-align: top;
+  /* text-align: left; */
+}
+.benefits{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
 
-#registForm {
-  color:  white;
-  text-align: left;
-  font-size: large;
 }
-#registForm h1 {
-  color: black;
+.benefit-list{
+  margin-top: 60px;
 }
-#registForm a {
-  color: black;
-}
-
