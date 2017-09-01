@@ -11,7 +11,7 @@ noNumberPls = re.compile(r'^[a-zA-Z]+$')
 # Create your models here.
 
 class UserManager(models.Manager):
-    def registration_validator(self, postData):
+    def user_validator(self, postData):
         errors = {}
 
         if len(postData['email']) <1:

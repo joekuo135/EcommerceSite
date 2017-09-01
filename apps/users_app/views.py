@@ -30,30 +30,30 @@ def show_map(request):
 def registration(request):
 	return render(request, 'userDashboard/registration.html')
 
-def signin(request):
-    if 'user_id' in request.session:
-        if request.session['isAdmin'] == True:
-            return redirect('/dashboard')
-        return redirect('/products')
-    return render(request, 'userDashboard/login.html')
+# def signin(request):
+#     if 'user_id' in request.session:
+#         if request.session['isAdmin'] == True:
+#             return redirect('/dashboard')
+#         return redirect('/products')
+#     return render(request, 'userDashboard/login.html')
 
-def login(request):
-    if request.method == 'POST':
-        try:
-            current_user = User.objects.get(email = request.POST['email'])
-            if bcrypt.checkpw(request.POST['password'].encode(), current_user.password.encode()):
-                if request.session['user_id'] == current_user.id()
-                	request.session['isAdmin'] = True
-                    return redirect('/dashboard')
-                else:
-                    request.session['isAdmin'] = False
-                    return redirect('/products')
-            else:
-                messages.error(request, 'Your Login information does not match our database. Please try again.')
+# def login(request):
+#     if request.method == 'POST':
+#         try:
+#             current_user = User.objects.get(email = request.POST['email'])
+#             if bcrypt.checkpw(request.POST['password'].encode(), current_user.password.encode()):
+#                 if request.session['user_id'] == current_user.id()
+#                 	request.session['isAdmin'] = True
+#                     return redirect('/dashboard')
+#                 else:
+#                     request.session['isAdmin'] = False
+#                     return redirect('/products')
+#             else:
+#                 messages.error(request, 'Your Login information does not match our database. Please try again.')
 
-        except:
-            messages.error(request, 'Your Login information does not match our database. Please try again.')
-    return redirect('/signin')
+#         except:
+#             messages.error(request, 'Your Login information does not match our database. Please try again.')
+#     return redirect('/signin')
 
 def create_user(request):
     if request.method == 'POST':
