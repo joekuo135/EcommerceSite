@@ -45,7 +45,8 @@
                 {% endfor %}
                 {% endif %}
             </ul>
-            <form class="form grouped-form style-scope nap-form" action="/register/create" method="post" id="register-form" name="register-form">
+            <form action="/create_user"
+            class="form grouped-form style-scope nap-form" action="/register/create" method="post" id="register-form" name="register-form">
               {% csrf_token %}
               <fieldset class="form-group">
                 <div class="form-group">
