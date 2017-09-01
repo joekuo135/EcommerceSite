@@ -62,7 +62,7 @@ def create_user(request):
         if len(errors):
             for error in errors:
                 messages.error(request, error)
-            return redirect('/registration')
+            return redirect('/userDashboard/registration')
         else:
             check_email = User.objects.get(email = request.POST['email'])
             messages.error(request, 'Please try another email input.')
@@ -78,7 +78,7 @@ def create_user(request):
             shoppingCart = ShoppingCart(user=user)
             shoppingCart.save()
             messages.success(request, 'You have successfully registered')
-    return redirect('/registration')
+    return redirect('/userDashboard/registration')
 
 
 def user(request, user_id):
