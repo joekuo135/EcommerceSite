@@ -35,7 +35,6 @@ def index(request):
 	print featuredProducts
 
 	context = { 'featuredProducts': featuredProducts, }
-
 	return render(request, 'userDashboard/index.html', context)
 
 def show(request):
@@ -94,6 +93,8 @@ def process_add_product(request):
 	newArrival = "" #(optional) 1 for new, 0 for regular
 	
 	create_item(request, name, category, subCategory, description, fullDescription, image1, image2, image3, image4, size, price)
+def registration(request):
+	return redirect('userDashboard/registration.html')
 
 #---------------WOMENS adding item--------------------------
 def populate_database(request):
