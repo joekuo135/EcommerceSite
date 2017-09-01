@@ -26,7 +26,7 @@ def show_map(request):
 	return render(request, 'userDashboard/map.html')
 
 def registration(request):
-	return redirect('userDashboard/registration.html')
+	return render(request, 'userDashboard/registration.html')
 
 # def dashboard(request):
 #     #user must be logged in and must be an admin to see page
