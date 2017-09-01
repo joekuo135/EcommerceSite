@@ -25,13 +25,36 @@ def index(request):
 
 
 
-def update_cart(request, product_id):
+def add_item(request, product_id):
 	#get product
 	product = Product.objects.get(id=product_id)
 	#get users order
 	order = Order.objects.get(user=request.session['id'])
 	order.objects.add.products(product)
-	return render(request, '/carts')
+	
+	content = {
+	'order': order
+	}
+
+	return render(request, '/carts', content)
+
+def remove_item(request, product_id):
+	#get product
+	product = Product.objects.get(id=product_id)
+	#get users order
+	order = Order.objects.get(user=request.session['id'])
+	order.objects.remove.products(product)
+	content = {
+	'order': order
+	}
+
+	return render(request, '/carts', content)
+
+def create_cart(request):
+	new_cart = Order.objects.create(user=request.session['id'], status="empty")
+
+	return True
+
 
 
 	
