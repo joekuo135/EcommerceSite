@@ -112,14 +112,14 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<section class="align-top col-sm-4 col-lg-5" id="productbox">
+			<section class="align-top col-sm-4 col-lg-5" id="productbox" >
 				<h3 id="productName">{{product.name}}</h3>
 				<img class="thumbnail zoom" src="{{product.image1}}" alt="{{product.name}}" id="picsize">
 				<ul style="padding-left: 0";>
-					<li class="product_thumbnail"><img src={{product.image1}} class="product_thumbnail"></li>
-					<li class="product_thumbnail"><img src={{product.image2}} class="product_thumbnail"></li>
-					<li class="product_thumbnail"><img src={{product.image3}} class="product_thumbnail"></li>
-					<li class="product_thumbnail"><img src={{product.image4}} class="product_thumbnail"></li>
+					<li class="product_thumbnail" style="cursor:pointer"><img src={{product.image1}} class="product_thumbnail"></li>
+					<li class="product_thumbnail" style="cursor:pointer"><img src={{product.image2}} class="product_thumbnail"></li>
+					<li class="product_thumbnail" style="cursor:pointer"><img src={{product.image3}} class="product_thumbnail"></li>
+					<li class="product_thumbnail" style="cursor:pointer"><img src={{product.image4}} class="product_thumbnail"></li>
 				</ul>
 			</section>
 			
@@ -166,6 +166,12 @@
 				</section>
 			</div>
 		</div> <!-- End of row -->	
-	</div> <!-- End of container -->
+  </div> <!-- End of container -->
+  <script>
+    $(".product_thumbnail").click(function() {
+    $("#picsize").attr("src", $(this).attr("src"));
+  });
+  </script>
+
 </body>
 </html>
