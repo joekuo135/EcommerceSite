@@ -19,6 +19,24 @@
     <title>Registration</title>
 </head>
 <body>
+  <!-- SHOPPING CART SECTION -->
+  <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="collapsemenu">
+        <ul class="nav justify-content-end navbar-toggleable-sm flex-sm-row">
+          <li><a class="nav-item nav-link active" href="/userDashboard/login">MY ACCOUNT</a></li>
+          <li><a class="nav-item nav-link" href="/show_map">STORE LOCATOR</a></li>
+          <li><a class="nav-item nav-link" href="#">SHOPPING BAG</a></li>
+        </ul>
+      </div>
+    </nav>
   <!-- COMPANY LOGO --> 
   <div class="container-fluid">      
     <div class="justify-content-center text-center">
@@ -29,7 +47,7 @@
   <hr>
 
   <div class="text-center" style="margin-top:60px;">
-      <h3>REGISTER NOW</h3>
+      <h3 style="color: #4d4d4d">REGISTER NOW</h3>
       <p>Set up a SHOPSTYLE account and enjoy these key benefits and more.</p>
   </div>
   <div class="container-fluid">
@@ -87,7 +105,7 @@
                   <input class="btn btn-default" type="submit" value="Register">
                 </div>
               <fieldset>
-              <a href="/create_user">Already have an account? Login</a>
+              <a href="/userDashboard/login">Already have an account? Login</a>
             </form>
         
           </div>

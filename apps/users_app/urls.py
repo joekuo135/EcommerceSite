@@ -5,8 +5,8 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^show_map$', views.show_map),
     url(r'^registration$', views.registration),
-    # url(r'^signin$', views.signin),
-    # url(r'^signin/login$', views.login),
+    url(r'^login$', views.login),
+    url(r'^login_user$', views.login_user),
     url(r'^create_user$', views.create_user),
     
     # url(r'^dashboard$', views.dashboard),

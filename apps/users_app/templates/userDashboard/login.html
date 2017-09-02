@@ -19,6 +19,26 @@
     <title>Registration</title>
 </head>
 <body>
+  <!-- SHOPPING CART SECTION -->
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="collapsemenu">
+      <ul class="nav justify-content-end navbar-toggleable-sm flex-sm-row">
+        <li><a class="nav-item nav-link active" href="/userDashboard/login">MY ACCOUNT</a></li>
+        <li><a class="nav-item nav-link" href="/show_map">STORE LOCATOR</a></li>
+        <li><a class="nav-item nav-link" href="#">SHOPPING BAG</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
   <!-- COMPANY LOGO --> 
   <div class="container-fluid">      
     <div class="justify-content-center text-center">
@@ -29,47 +49,47 @@
   <hr>
 
   <div class="text-center" style="margin-top:60px;">
-      <h3>CUSTOMER LOGIN</h3>
+      <h3 style="color: #4d4d4d">CUSTOMER LOGIN</h3>
   </div>
   <div class="container-fluid">
     <div class="row">
-    <div class="col-sm-1"></div>
-      <div class="col-sm-10 col-md-8 col-lg-5">
-        <section class="col-sm-10 align-right">
-          <div class="registration-form">
-            <form class="form grouped-form style-scope nap-form" action="/register/create" method="post" id="register-form" name="register-form">
-              {% csrf_token %}
-              <fieldset class="form-group">
-                <div class="form-group">
-                  <label class="form-control-label" for="emailaddress">Email Address:</label>
-                  <input class="form-control" type="text" name="email" id="emailaddress">
-                </div>
-                <div class="form-group">
-                  <label class="form-control-label" for="password">Password:</label>
-                  <input class="form-control" type="password" name="password" placeholder="At least 6 characters">
-                </div>
-                <div class="form-group">
-                  <input class="btn btn-default" type="submit" value="Login">
-                </div>
-              <fieldset>
-            </form>
-            
-            <ul class="messages">
-            {% if messages %}
-            {% for message in messages %}
-              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-            {% endif %}
-            </ul>
-          </div>
-            <!-- <div class="col-md-4"></div> -->
-        </section>
-      </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 col-md-8 col-lg-5">
+          <section class="col-sm-10 align-right" style="margin-top: 20px;">
+            <div class="registration-form">
+              <ul class="messages" style="color: #FF00A2">
+                {% if messages %}
+                {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+                {% endif %}
+              </ul>
+              <h5 style="color: #FF00A2">Returning Customers</h5>
+              <form class="login form grouped-form style-scope nap-form" action="/register/create" method="post" id="login-form" name="login-form">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                  <div class="form-group">
+                    <label class="form-control-label" for="emailaddress">Email Address:</label>
+                    <input class="form-control" type="text" name="email" id="emailaddress">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label" for="password">Password:</label>
+                    <input class="form-control" type="password" name="password">
+                  </div>
+                  <div class="form-group">
+                    <input class="btn btn-default" type="submit" value="Login">
+                  </div>
+                <fieldset>
+              </form>
+            </div> <!-- close class="registration-form" -->
+          </section>
+        </div> <!-- close class="col-sm-10 col-md-8 col-lg-5" -->
+    
 
-        <div class="benefits">
-          <div class="row-fluid">
-          <section>
-              <h5>New Customer? Create a new account. It's easy and so many benefits...</h5>
+      <div class="benefits" style="margin-top: 20px;" >
+        <div class="row-fluid">
+          <section class="col-sm-10 align-right">
+            <h5><span style="color: #FF00A2">New Customers?</span> Create a new account. It's easy and so many benefits...</h5>
               <ul class="justify-content-center" style="margin-top: 20px;" id="benefit-list">
                 <li class="active">Fast sign in and checkout plus delivery updates</li>
                 <li>Fashion, beauty and fitness emails from our Editors</li>
@@ -77,17 +97,12 @@
                 <li>Receive invites to sales, offers and more</li>
                 <li>Alerts when items arrive from your favourite designers</li>
               </ul>
-              <input type="button" class="btn btn-default" value="Create New Account" onclick="location.href = '/userDashboard/registration.html/';">
+            <input type="button" class="btn btn-default" style="margin-top:10px" value="Create New Account" onclick="location.href = '/userDashboard/registration';">
           </section>
-
-          </div>
-        </div>
-   
-      
-      
-
-    </div>
-  </div>
+        </div> <!-- close row fluid -->
+      </div> <!-- close class="benefits" -->
+    </div>  <!-- close row -->
+  </div> <!-- close container fluid -->
 
 </body>
 </html>

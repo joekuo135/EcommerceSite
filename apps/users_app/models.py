@@ -60,22 +60,21 @@ class UserManager(models.Manager):
         
         return errors
 
-	def login_validator(self, postData):
-		errors = []
-        if 'email' in postData:
-            if len(postData['email']) == 0:
-                errors.append('Email and password combination are not in our record')
-            elif not EMAIL_REGEX.match(postData['email']):
-                errors.append('Email and password combination are not in our record')
-
-        if 'password' in postData:
-            if len(postData['password']) == 0:
-                errors.append('Please enter your password.')
-            elif len(postData['password']) < 8:
-                errors.append('Password should be no fewer than 8 characters')
-            elif postData['password'] != postData['conf_pass']:
-                errors.append('Password Confirmation do not match. Please try again.')
-		return errors
+    # def login_validator(self, postData):
+    #     errors = []
+    #     if 'email' in postData and 'password' in postData:
+    #         try:
+    #             user = User.objects.get(email = postData['email'])
+    #         except User.DoesNotExist:
+    #             errors.append("Sorry, please try logging in again")
+    #             return (False, errors)
+    #     #password field/check
+    #     pw_match = bcrypt.hashpw(postData['password'].encode(), user.password.encode())
+    #     if pw_match == user.password:
+    #         return (True, user)
+    #     else:
+    #         errors1.append("Sorry please try again!!!!")
+    #         return (False, errors)
 
 class User(models.Model):
     first_name = models.CharField(max_length=255)

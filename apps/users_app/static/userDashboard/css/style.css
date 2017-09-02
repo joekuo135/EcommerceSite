@@ -172,7 +172,7 @@ p{
 .benefits{
   display: inline-block;
   vertical-align: top;
-  margin-left: 10px;
+  margin: 10px;
 
 }
 .benefit-list{

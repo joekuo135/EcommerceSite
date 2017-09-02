@@ -20,13 +20,23 @@
 </head>
 <body>    
   <!-- SHOPPING CART SECTION -->
-  <div class="container-fluid">
+  <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="collapsemenu">
         <ul class="nav justify-content-end navbar-toggleable-sm flex-sm-row">
-          <li><a class="nav-item nav-link active" href="#">MY ACCOUNT</a></li>
-          <li><a class="nav-item nav-link" href="#">STORE LOCATOR</a></li>
+          <li><a class="nav-item nav-link active" href="/userDashboard/login">MY ACCOUNT</a></li>
+          <li><a class="nav-item nav-link" href="/show_map">STORE LOCATOR</a></li>
           <li><a class="nav-item nav-link" href="#">SHOPPING BAG</a></li>
-        </ul> 
-    </div> <!-- end container fluid-->
+        </ul>
+      </div>
+    </nav>
 
     <!-- SEARCH SECTION -->
     <div class="container-fluid">
