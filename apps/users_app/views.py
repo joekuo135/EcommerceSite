@@ -39,62 +39,61 @@ def login(request):
 #             return redirect('/dashboard')
 #         return redirect('/products')
 #     return render(request, 'userDashboard/login.html')
-
-def login_user(request):
-    if 'id' in request.session:
-        return redirect('/userDashboard/user_profile')
-    if request.method == 'GET':
-        return redirect('/')
-    else:
-        user = User.objects.login(request.POST)
-        print user
-        if user[0] == False:
-            for each in user[1]:
-                messages.add_message(request, messages.INFO, each)
-            return redirect('/')
-        if user[0] == True:
-            messages.add_message(request, messages.INFO,'Welcome, You are logged in!')
-            request.session['id'] = user[1].id
-            return redirect('/userDashboard/user_profile')
-
-def create_user(request):
-    if request.method == 'POST':
-        # validate all form data
-        errors = User.objects.user_validator(request.POST)
-        if len(errors):
-            for error in errors:
-                messages.error(request, error)
-            return redirect('/userDashboard/registration')
-        else:
-            check_email = User.objects.get(email = request.POST['email'])
-            messages.error(request, 'Please try another email input.')
-
-            return redirect('/signin')
-
-            hash_it = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
-                
-            # insert user into database
-            user = User(first_name=request.POST['first_name'], last_name=request.POST['last_name'],email=request.POST['email'],birthday=request.POST['birthday'],user_level=user_level,password=hash_it)
-            user.save()
-                
-            shoppingCart = ShoppingCart(user=user)
-            shoppingCart.save()
-            messages.success(request, 'You have successfully registered')
-    return redirect('/userDashboard/registration')
-
-
-def user(request, user_id):
-    if 'user_id' not in request.session:
-        messages.error(request, 'You are not logged in.')
-        return redirect('/')
-
-    owner = User.objects.get(id=user_id)
-    context = {
-        'current_user_id' : request.session['user_id'],
-        'user' : owner,
+def user_profile(request):
+    user = User.objects.get(id=request.session['id'])
+    content ={
+    'user': user
     }
 
-    return render(request, 'userDashboard/user_profile.html', context)
+    return render(request, 'userDashboard/user_profile.html', content)
+
+def login_user(request):
+    print "login_user"
+    print "I am in login"
+    result = User.objects.login_validator(request.POST)
+
+    if type(result) == dict:
+        errors = result
+        if len(errors):
+            print errors
+            for tag, error in errors.iteritems():
+                messages.error(request, error, extra_tags=tag)
+            return redirect('/userDashboard/login')
+
+    request.session['id']= result.id
+    return redirect('/userDashboard/user_profile')
+
+def create_user(request):
+    print "create_user"
+    result = User.objects.registration_validator(request.POST)
+    print result
+    if type(result) == dict:
+        errors = result
+        if len(errors):
+            print errors
+            for tag, error in errors.iteritems():
+                messages.error(request, error, extra_tags=tag)
+            return redirect('/userDashboard/registration')
+
+    request.session['id']= result.id
+    #create cart for users
+    Order.objects.create(user=result, status="empty")
+
+    return redirect('/userDashboard/user_profile')
+
+
+# def user(request, user_id):
+#     if 'user_id' not in request.session:
+#         messages.error(request, 'You are not logged in.')
+#         return redirect('/')
+
+#     owner = User.objects.get(id=user_id)
+#     context = {
+#         'current_user_id' : request.session['user_id'],
+#         'user' : owner,
+#     }
+
+#     return render(request, 'userDashboard/user_profile.html', context)
 
 # def dashboard(request):
 #     #user must be logged in and must be an admin to see page

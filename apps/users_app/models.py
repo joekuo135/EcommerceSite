@@ -11,70 +11,74 @@ noNumberPls = re.compile(r'^[a-zA-Z]+$')
 # Create your models here.
 
 class UserManager(models.Manager):
-    def user_validator(self, postData):
-        errors = []
 
-        if 'email' in postData:
-            if len(postData['email']) == 0:
-                errors.append('Please enter your Email Address.')
-            elif not EMAIL_REGEX.match(postData['email']):
-                errors.append('Please enter a VALID email address.')
+    def registration_validator(self, postData):
+        #create object to store errors
+        error ={}
+        #validate email
+        print "this is email", postData['email']
+        if len(User.objects.filter(email=postData['email'])) > 0:
+            print "result", User.objects.filter(email=postData['email'])
+            error['email'] = "User already registered, please login"
+            return error
+        #validate name
+        if len(postData['first_name']) < 3:
+            error['first_name'] = "first name should be more than 2 characters"
+            #validate name
+        if len(postData['last_name']) < 3:
+            error['last_name'] = "last name should be more than 2 characters"
+        #validate email
+        if len(postData['email']) < 3:
+            error['email'] = "email should be more than 2 characters"
+        #validate password
+        if len(postData['password']) < 6:
+            error['password'] = "Password must be at least 8 characters"
+        #password confirmation does not match
+        if postData['password'] != postData['conf_pass']:
+            error['password'] = "Passwords do not match"
 
-        if 'first_name' in postData:
-            if len(postData['first_name']) == 0:
-                errors.append('Please enter your First Name.')
-            elif len(postData['first_name']) < 2:
-                errors.append('First name should be no fewer than 2 letters')
-            elif not noNumberPls.match(postData['first_name']):
-                errors.append('First name should have no numbers or special characters in it.')
+        try:
+            today = date.time.now()
+            if datetime.strptime(postData['birthday'], '%Y-%m-%d') > today.date():
+                error['birthday'] = "birthday date cannot be in the future"
+        except:
+            if postData['birthday'] == "":
+                error["birthday"] = "birthday date cannot be empty"
+        if error:
+            return error
 
-        if 'last_name' in postData:
-            if len(postData['last_name']) == 0:
-                errors.append('Please enter your Last Name.')
-            elif len(postData['last_name']) < 2:
-                errors.append('Last name should be no fewer than 2 letters')
-            elif not noNumberPls.match(postData['last_name']):
-                errors.append('Last name should have no numbers or special characters in it.')
+        #If passes all validations create user
+        first_name = postData['first_name']
+        last_name = postData['last_name']
+        email = postData['email']
+        birthday = postData['birthday']
+        password = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
+        user = User.objects.create(first_name=first_name, last_name=last_name, email=email, password=password, birthday=birthday)
 
-        if 'password' in postData:
-            if len(postData['password']) == 0:
-                errors.append('Please enter your Password.')
-            elif len(postData['password']) < 8:
-                errors.append('Password should be no fewer than 8 characters')
-            elif postData['password'] != postData['conf_pass']:
-                errors.append('Password Confirmation do not match. Please try again.')
+        return user
 
-        if 'birthday' in postData:
-            if len(postData['birthday']) == 0:
-                errors.append('Please enter your Birth Date')
-            else:
-                birthday = postData['birthday']
-                date_format = "%Y-%m-%d"
-                birth = datetime.strptime(birthday, date_format).date()
-                now = datetime.now().date()
-
-                if birth > now:
-                    errors.append('Please enter correct birth date!')
-                elif birth == now:
-                    errors.append('Please enter correct birth date!')
+    def login_validator(self, postData):
+        error = {}
+        if postData['email'] == "":
+            error['email'] = "email cannot be empty"
+        if postData['password'] == "":
+            error['password'] = "Password cannot be empty"
         
-        return errors
+        if error:
+            return error
 
-    # def login_validator(self, postData):
-    #     errors = []
-    #     if 'email' in postData and 'password' in postData:
-    #         try:
-    #             user = User.objects.get(email = postData['email'])
-    #         except User.DoesNotExist:
-    #             errors.append("Sorry, please try logging in again")
-    #             return (False, errors)
-    #     #password field/check
-    #     pw_match = bcrypt.hashpw(postData['password'].encode(), user.password.encode())
-    #     if pw_match == user.password:
-    #         return (True, user)
-    #     else:
-    #         errors1.append("Sorry please try again!!!!")
-    #         return (False, errors)
+        #check if user is the database
+        if len(User.objects.filter(email=postData['email'])) > 0:
+            user = User.objects.filter(email=postData['email'])[0]
+            #compare passwords
+            if not bcrypt.checkpw(postData['password'].encode(), user.password.encode()):
+                error['password'] = 'Incorrect password'
+        else:
+            error['password'] = 'Please register'
+
+        if error:
+            return error
+        return user
 
 class User(models.Model):
     first_name = models.CharField(max_length=255)

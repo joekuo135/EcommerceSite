@@ -8,5 +8,5 @@ from ..users_app.models import User
 # Create your models here.
 class Order(models.Model):
 	user = models.ForeignKey(User, related_name ="users_order", null=True)
-	status = models.CharField(max_length=255, null=True) #in_process, completed
+	status = models.CharField(max_length=255, null=True) #empty in_process, completed
 	#products = models.ManyToManyField(Product)

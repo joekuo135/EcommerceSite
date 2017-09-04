@@ -29,27 +29,30 @@
 
 
 
-<table>
+<table class="table table-striped">
 <tr>
   <th>Name</th>
   <th>Description</th>
   <th>Price</th>
 </tr>
-{% for product in products%}
+{% for product in all_products%}
 <tr>
   <td>{{product.name}}</td>
   <td>{{product.description}}</td>
   <td>{{product.total}}</td>
+  <td>{{product.price}}</td>
   </tr>
   {% endfor%}
   <tr>
     <td></td>
     <td>Total</td>
-    <td></td>
+    <td>{{total}}</td>
   </tr>
 
 </table>
-  
+ 
+
+ <input class="btn btn-default active" type="submit" value='Checkout'>  
 
 
 </body>

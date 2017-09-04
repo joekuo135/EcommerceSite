@@ -11,8 +11,9 @@ import re
 import bcrypt
 import math
 from models import User
+from models import Order
 from ..products_app.models import Product
-from ..orders_app.models import Order
+
 
 
 
@@ -26,17 +27,28 @@ def index(request):
 
 
 def add_item(request, product_id):
+	if 'id' not in request.session:
+		print "user is not logged in"
+		return redirect('/userDashboard/login')
+
 	#get product
 	product = Product.objects.get(id=product_id)
+
 	#get users order
 	order = Order.objects.get(user=request.session['id'])
-	order.objects.add.products(product)
+
+	order.products.add(product)
+	all_products = Product.objects.filter(order=order.id)
+	total = 0
+	for product in all_products:
+		total += product.price
 	
 	content = {
-	'order': order
+	'all_products': all_products,
+	'total': total
 	}
 
-	return render(request, '/carts', content)
+	return render(request, 'orders_app/cart.html', content)
 
 def remove_item(request, product_id):
 	#get product
