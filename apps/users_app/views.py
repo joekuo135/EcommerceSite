@@ -31,7 +31,14 @@ def registration(request):
 	return render(request, 'userDashboard/registration.html')
 
 def login(request):
-	return render(request, 'userDashboard/login.html')
+    if 'id' in request.session:
+        return redirect('/userDashboard/user_profile')
+    else:   
+	   return render(request, 'userDashboard/login.html')
+
+def logout(request):
+    request.session.clear()
+    return redirect('/')
 
 # def signin(request):
 #     if 'user_id' in request.session:
@@ -50,18 +57,21 @@ def user_profile(request):
 def login_user(request):
     print "login_user"
     print "I am in login"
-    result = User.objects.login_validator(request.POST)
+    if 'id' in request.session:
+        return redirect('/userDashboard/user_profile')
+    else:
+        result = User.objects.login_validator(request.POST)
 
-    if type(result) == dict:
-        errors = result
-        if len(errors):
-            print errors
-            for tag, error in errors.iteritems():
-                messages.error(request, error, extra_tags=tag)
-            return redirect('/userDashboard/login')
+        if type(result) == dict:
+            errors = result
+            if len(errors):
+                print errors
+                for tag, error in errors.iteritems():
+                    messages.error(request, error, extra_tags=tag)
+                return redirect('/userDashboard/login')
 
-    request.session['id']= result.id
-    return redirect('/userDashboard/user_profile')
+        request.session['id']= result.id
+        return redirect('/userDashboard/user_profile')
 
 def create_user(request):
     print "create_user"

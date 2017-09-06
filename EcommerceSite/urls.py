@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^orders/', include('apps.orders_app.urls')),
     url(r'^userDashboard/', include('apps.users_app.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^show_map/',include('apps.users_app.urls')),
 ]
 
