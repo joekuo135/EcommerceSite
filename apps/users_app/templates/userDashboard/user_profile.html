@@ -18,15 +18,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Men's Foorwear</title>
 <body>    
-  <!-- SHOPPING CART SECTION -->
-  <div class="container-fluid">
-        <ul class="nav justify-content-end navbar-toggleable-sm flex-sm-row">
-          <li><a class="nav-item nav-link active" href="#">MY ACCOUNT</a></li>
-          <li><a class="nav-item nav-link" href="/show_map/show_map">STORE LOCATOR</a></li>
-          <li><a class="nav-item nav-link" href="#">SHOPPING BAG</a></li>
-          <li><a class="nav-link top_space" href="/userDashboard/logout">LOG OFF</a></li>
-        </ul> 
-    </div> <!-- end container fluid-->
+<!-- SHOPPING CART SECTION -->
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="collapsemenu">
+      <ul class="nav justify-content-end navbar-toggleable-sm flex-sm-row">
+        <li><a class="nav-item nav-link active" href="/userDashboard/login">MY ACCOUNT</a></li>
+        <li><a class="nav-item nav-link" href="/show_map/show_map">STORE LOCATOR</a></li>
+        <li><a class="nav-item nav-link" href="/orders">SHOPPING BAG</a></li>
+        <li><a class="nav-link top_space" href="/userDashboard/logout">LOG OFF</a></li>
+      </ul>
+    </div>
+  </nav>
+
 
 
     <!-- COMPANY LOGO --> 
@@ -38,13 +49,15 @@
     </div> <!-- close container --> 
 
 
+
+
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
         <hr>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{user.first_name}} {{user.last_name}}</h1>
+                <h1>Welcome! {{user.first_name}} {{user.last_name}}</h1>
                 <p>Registered at: {{user.created_at}}</p>
                 <p>User ID: #{{user.id}}</p>
                 <p>Email Address: {{user.email}}</p>

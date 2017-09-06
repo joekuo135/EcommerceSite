@@ -28,6 +28,11 @@
 .logo{
   color:black;
 }
+.billing-form{
+  width:375px
+}
+
+
 
 .item{
   display: inline-block;
