@@ -117,10 +117,11 @@
       
         <ul class="nav flex-column flex-nowrap">
           {%for category in categories%}
-          <li class="nav-item" style="list-style:none;"><a class='nav-link collapsed' href="/products/show_dashboard/{{category}}" data-toggle="collapse" data-target="#submenu1">{{category}}</a></li>
+          <li class="nav-item" style="list-style:none;"><a class='nav-link collapsed' href="/products/show_dashboard/{{category}}_Apperal" data-toggle="collapse" data-target="#submenu1">{{category}}</a></li>
             <div class="collapse" id="submenu1" aria-expanded="false">
               <ul class="flex-column nav">
-                <li><a class='nav-item' href="/products/show_dashboard/{{subCategory}}">{{subCategory}}</a></li>
+                <li><a class='nav-item' href="/products/show_dashboard/{{Category}}_Apperal">Apperal</a></li>
+                <li><a class='nav-item' href="/products/show_dashboard/{{Category}}_Footwear">Apperal</a></li>
               </ul>
             </div>
           </li>
